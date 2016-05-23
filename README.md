@@ -51,7 +51,7 @@ npm-yeoman
 		angular-tool->select all
 * done
 
-start
+grunt cmd
 -----------------
 * Build & development
 
