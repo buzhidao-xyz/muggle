@@ -1,0 +1,24 @@
+.userc {
+	margin-bottom: 0;
+}
+.userc li {
+	
+}
+.userc li a {
+	display: block;
+	line-height: 20px;
+	padding: 10px 15px;
+}
+@media (min-width: 768px) {
+	.userc {
+		float: right;
+	}
+	.userc li {
+		float: left;
+		display: block;
+	}
+	.userc li a {
+		padding-top: 15px;
+		padding-bottom: 15px;
+	}
+}
