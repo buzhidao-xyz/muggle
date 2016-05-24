@@ -33,7 +33,7 @@ angular
       })
       .when('/course', {
         templateUrl: 'views/course.html',
-        controller: 'LessonCtrl',
+        controller: 'CourseCtrl',
         controllerAs: 'course'
       })
       .when('/login', {

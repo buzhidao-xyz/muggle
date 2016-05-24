@@ -33,4 +33,7 @@ angular.module('muggleApp')
         $location.path('/login');
       }
     }
+
+    //统一API返回数据处理方法
+    
   }]);
