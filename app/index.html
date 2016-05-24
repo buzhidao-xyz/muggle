@@ -35,7 +35,7 @@
             <a class="navbar-brand" href="#/main">麻瓜编程</a>
           </div>
 
-          <div class="collapse navbar-collapse" id="js-navbar-collapse">
+          <div class="collapse navbar-collapse" id="js-navbar-collapse" ng-controller="UserCtrl">
 
             <ul class="nav navbar-nav">
               <!-- <li class="active"><a href="#/">Home</a></li> -->
@@ -43,8 +43,11 @@
               <li><a ng-href="#/course">实战课程</a></li>
             </ul>
 
-            <ul class="userc list-unstyled" ng-controller="UserCtrl">
+            <ul class="userc list-unstyled ng-cloak" ng-cloak ng-if="!$userinfo.id">
               <li><a href="#/login">登录</a></li>
+            </ul>
+            <ul class="userc list-unstyled ng-cloak" ng-cloak ng-if="$userinfo.id">
+              <li><span>{{$userinfo.name}}</span></li>
               <li><a href="javascript:;" ng-click="logout()">退出</a></li>
             </ul>
 

@@ -4,7 +4,7 @@
 .userc li {
 	
 }
-.userc li a {
+.userc li a, .userc li span {
 	display: block;
 	line-height: 20px;
 	padding: 10px 15px;
@@ -17,7 +17,7 @@
 		float: left;
 		display: block;
 	}
-	.userc li a {
+	.userc li a, .userc li span {
 		padding-top: 15px;
 		padding-bottom: 15px;
 	}
