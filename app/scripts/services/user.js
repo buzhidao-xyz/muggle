@@ -29,17 +29,36 @@ angular.module('muggleApp')
           $rootScope.$broadcast('apiRequest.failed');
         });
       },
-      logout:function(param,data){
-        var url=Api.host+Api.user.logout.u;
+
+      coursesinfo: {},
+      courseList: function (param, data) {
+        var url = Api.host + Api.courses.u;
         $http({
-          merthod:Api.user.logout.m,
-          url:url,
-          param:param,
-          data:data
-        }).success(function(data,status){
+          merthod: Api.courses.m,
+          url: url,
+          param: param,
+          data: data
+        }).success(function (data, status) {
+          service.coursesinfo = data;
           //广播事件 - login.success
+          $rootScope.$broadcast('courses.success');
+        }).error(function (param, data) {
+          //广播事件 - apiRequest.failed
+          $rootScope.$broadcast('apiRequest.failed');
+        });
+      },
+
+      logout: function (param, data) {
+        var url = Api.host + Api.user.logout.u;
+        $http({
+          merthod: Api.user.logout.m,
+          url: url,
+          param: param,
+          data: data
+        }).success(function (data, status) {
+          //广播事件 - logout.success
           $rootScope.$broadcast('logout.success');
-        }).error(function(data,status){
+        }).error(function (data, status) {
           $rootScope.$broadcast('apiRequest.failed');
         });
       }

@@ -16,13 +16,25 @@ angular.module('muggleApp')
     '$route',
     '$routeParams',
     '$location', function ($scope, $rootScope, $controller, $UserService, $route, $routeParams, $location) {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+      this.awesomeThings = [
+        'HTML5 Boilerplate',
+        'AngularJS',
+        'Karma'
+      ];
 
-    //BaseCtrl
-    var BaseCtrl = $controller('BaseCtrl', {$rootScope: $rootScope, $scope: $scope});
+      //BaseCtrl
+      var BaseCtrl = $controller('BaseCtrl', {$rootScope: $rootScope, $scope: $scope});
 
-  }]);
+      $scope.doCourseList = function () {
+        var data = {
+          page: 0,
+          size: 0
+        }
+        $UserService.courseList({}, data);
+      }
+
+      $scope.$on('courses.success', function (event, d) {
+        $scope.courseList = BaseCtrl.apiResult($UserService.coursesinfo);
+      })
+      $scope.doCourseList();
+    }]);

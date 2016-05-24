@@ -15,7 +15,8 @@ angular.module('muggleApp')
     'UserService',
     '$route',
     '$routeParams',
-    '$location', function ($scope, $rootScope, $controller, $UserService, $route, $routeParams, $location) {
+    '$location',
+    function ($scope, $rootScope, $controller, $UserService, $route, $routeParams, $location) {
       this.awesomeThings = [
         'HTML5 Boilerplate',
         'AngularJS',
@@ -43,11 +44,20 @@ angular.module('muggleApp')
           $scope.$userinfo = BaseCtrl.apiResult($UserService.userinfo);
           //记录用户信息-cookie
           BaseCtrl.gsuserinfo($scope.$userinfo);
+          $location.path('/main');
         });
       }
       $scope.doLogin();
 
-        $scope.logout2 = function () {
-          alert(1111);
+      $scope.doLogout = function () {
+        $scope.logout = function () {
+          $UserService.logout({}, {});
+
+          $scope.$on('logout.success', function (event, d) {
+            BaseCtrl.ususerinfo();
+            $location.path('/login');
+          });
         }
+      }
+      $scope.doLogout();
     }]);
