@@ -51,12 +51,11 @@ angular.module('muggleApp')
 
       $scope.doLogout = function () {
         $scope.logout = function () {
-          $UserService.logout({}, {});
+          var data = BaseCtrl.apiRequestData({});
+          $UserService.logout({},data);
+          BaseCtrl.ususerinfo();
 
-          $scope.$on('logout.success', function (event, d) {
-            BaseCtrl.ususerinfo();
-            $location.path('/login');
-          });
+          $location.path('/login');
         }
       }
       $scope.doLogout();

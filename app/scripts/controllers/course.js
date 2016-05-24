@@ -12,10 +12,10 @@ angular.module('muggleApp')
     '$scope',
     '$rootScope',
     '$controller',
-    'UserService',
+    'CourseService',
     '$route',
     '$routeParams',
-    '$location', function ($scope, $rootScope, $controller, $UserService, $route, $routeParams, $location) {
+    '$location', function ($scope, $rootScope, $controller, $CourseService, $route, $routeParams, $location) {
       this.awesomeThings = [
         'HTML5 Boilerplate',
         'AngularJS',
@@ -30,11 +30,11 @@ angular.module('muggleApp')
           page: 0,
           size: 0
         }
-        $UserService.courseList({}, data);
+        $CourseService.getcourselist({}, data);
       }
 
       $scope.$on('courses.success', function (event, d) {
-        $scope.courseList = BaseCtrl.apiResult($UserService.coursesinfo);
+        $scope.courseList = BaseCtrl.apiResult($CourseService.courselist);
       })
       $scope.doCourseList();
     }]);

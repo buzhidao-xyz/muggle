@@ -16,8 +16,10 @@ var Api = {
     logout: {
       m: 'post',
       u: 's/logout'
-    },
-    courses: {
+    }
+  },
+  course: {
+    getcourselist: {
       m: 'post',
       u: 's/courses/list'
     }

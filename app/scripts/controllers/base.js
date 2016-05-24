@@ -49,12 +49,14 @@ angular.module('muggleApp')
 
       //销毁cookie-userinfo
       $scope.ususerinfo = function () {
-        $cookies.putObject('userinfo', {});
-        $cookies.putObject('sessionid', "");
+        $cookies.remove('userinfo');
+        $cookies.remove('sessionid');
       }
 
       //登录验证
       $scope.checkLogin = function () {
+        //获取sessionid
+        $rootScope.sessionid = $cookies.getObject('sessionid');
         //获取userinfo
         $rootScope.$userinfo = $scope.gsuserinfo();
 
@@ -62,6 +64,18 @@ angular.module('muggleApp')
           $location.path('/login');
         }
       }();
+
+      //统一API请求数据处理方法
+      $scope.apiRequestData = function (data) {
+        var data = data ? data : {
+          sessionid: ""
+        }
+
+        var sessionid = $cookies.getObject('sessionid');
+        data.sessionid = sessionid;
+
+        return data;
+      }
 
       //统一API返回数据处理方法
       $scope.apiResult = function (data, params) {
@@ -80,6 +94,7 @@ angular.module('muggleApp')
         alertShow: $scope.alertShow,
         gsuserinfo: $scope.gsuserinfo,
         ususerinfo: $scope.ususerinfo,
+        apiRequestData: $scope.apiRequestData,
         apiResult: $scope.apiResult
       }
     }]);
