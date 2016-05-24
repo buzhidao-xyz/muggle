@@ -44,5 +44,13 @@ angular
       .otherwise({
         redirectTo: '/login'
       });
-
-  });
+  }).run(['$rootScope', '$window', '$location', '$log', function ($rootScope, $window, $location, $log) {
+    //监听事件 - 路由切换开始
+    $rootScope.$on('$routeChangeStart', function (){
+      
+    });
+    //监听事件 - 路由切换成功
+    $rootScope.$on('$routeChangeSuccess', function (){
+      
+    });
+  }]);

@@ -25,7 +25,7 @@ angular.module('muggleApp')
     //BaseCtrl
     var BaseCtrl = $controller('BaseCtrl', {$rootScope: $rootScope, $scope: $scope});
 
-    //login
+    //doLogin
     $scope.doLogin = function (){
     	//点击事件 - login
     	$scope.login = function (){
@@ -39,7 +39,10 @@ angular.module('muggleApp')
 	    }
 	    //事件监听 - login.success
 			$scope.$on('login.success', function (event, d) {
-				$rootScope.$userinfo = $UserService.userinfo.data;
+				//API返回数据统一处理
+				$scope.$userinfo = BaseCtrl.apiResult($UserService.userinfo);
+				//记录用户信息-cookie
+				BaseCtrl.gsuserinfo($scope.$userinfo);
 			});
     }
     $scope.doLogin();
