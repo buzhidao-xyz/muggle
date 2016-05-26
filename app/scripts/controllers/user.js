@@ -55,7 +55,7 @@ angular.module('muggleApp')
           $UserService.logout({},data);
           BaseCtrl.ususerinfo();
 
-           //$location.path('/login');
+           $location.path('/login');
           location.reload();
         }
       }
