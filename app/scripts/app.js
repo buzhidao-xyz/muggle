@@ -62,6 +62,11 @@ angular
         controller: 'CourseCtrl',
         controllerAs: 'course'
       })
+      .when('/courseview',{
+        templateUrl: 'views/courseview.html',
+        controller: 'CourseViewCtrl',
+        controllerAs: 'courseview'
+      })
       .otherwise({
         redirectTo: '/login'
       });

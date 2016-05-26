@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc function
- * @name muggleApp.controller:CourseCtrl
+ * @name muggleApp.controller:CourseViewCtrl
  * @description
- * # CourseCtrl
+ * # CourseViewCtrl
  * Controller of the muggleApp
  */
 angular.module('muggleApp')
-  .controller('CourseCtrl', [
+  .controller('CourseViewCtrl', [
     '$scope',
     '$rootScope',
     '$controller',
@@ -25,17 +25,22 @@ angular.module('muggleApp')
       //BaseCtrl
       var BaseCtrl = $controller('BaseCtrl', {$rootScope: $rootScope, $scope: $scope});
 
-      $scope.doCourseList = function () {
-        var data = {
-          page: 0,
-          size: 0
-        }
-        var data = BaseCtrl.apiRequestData(data);
-        $CourseService.getcourselist({}, data);
+      //获取课程详情
+      $scope.doCourseView = function () {
+        //courseid
+        var courseid = $location.search().courseid;
 
-        $scope.$on('courses.success', function (event, d) {
-          $scope.courseList = BaseCtrl.apiResult($CourseService.courselist);
+        var data = {
+          courseid: courseid
+        }
+        //getcourseview
+        $CourseService.getcourseview({}, data);
+
+        //监听-coursesview.success
+        $scope.$on('coursesview.success', function (event, d) {
+          $scope.$courseview = BaseCtrl.apiResult($CourseService.courseview);
         })
       }
-      $scope.doCourseList();
+      $scope.doCourseView();
+
     }]);

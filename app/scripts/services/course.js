@@ -10,13 +10,14 @@
 angular.module('muggleApp')
   .service('CourseService', ['$rootScope', '$http', function ($rootScope, $http) {
     var service = {
+      //courseist
       courselist: {},
-      getcourselist: function (param, data) {
+      getcourselist: function (params, data) {
         var url = Api.host + Api.course.getcourselist.u;
         $http({
-          merthod: Api.course.getcourselist.m,
+          method: Api.course.getcourselist.m,
           url: url,
-          param: param,
+          params: params,
           data: data
         }).success(function (data, status) {
           service.courselist = data;
@@ -24,6 +25,25 @@ angular.module('muggleApp')
           $rootScope.$broadcast('courselist.success');
         }).error(function (param, data) {
           //广播事件 - apiRequest.failed
+          $rootScope.$broadcast('apiRequest.failed');
+        });
+      },
+
+      //courseview
+      courseview: {},
+      getcourseview: function (params, data) {
+        var url = Api.host + Api.course.getcourseview.u;
+        $http({
+          method: Api.course.getcourseview.m,
+          url: url,
+          params: params,
+          data: data
+        }).success(function (data, status) {
+          service.courseview = data;
+          //广播事件 - getcourseview.success
+          $rootScope.$broadcast('getcourseview.success');
+        }).error(function (param, data) {
+          //广播事件 - getcourseview.failed
           $rootScope.$broadcast('apiRequest.failed');
         });
       }
