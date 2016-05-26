@@ -1,98 +1,104 @@
 <!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <!-- build:css(.) styles/vendor.css -->
-    <!-- bower:css -->
-    <!-- endbower -->
-    <!-- endbuild -->
-    <!-- build:css(.tmp) styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
-    <!-- endbuild -->
-  </head>
-  <body ng-app="muggleApp">
-    <!--[if lte IE 8]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>麻瓜编程</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <!-- build:css(.) styles/vendor.css -->
+  <!-- bower:css -->
+  <!-- endbower -->
+  <!-- endbuild -->
+  <!-- build:css(.tmp) styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- endbuild -->
+</head>
+<body ng-app="muggleApp">
+<!--[if lte IE 8]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+  your browser</a> to improve your experience.</p>
+<![endif]-->
 
-    <!-- Add your site or application content here -->
-    <div class="header">
-      <div class="navbar navbar-default" role="navigation">
-        <div class="container">
-          <div class="navbar-header">
-
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-
-            <a class="navbar-brand" href="#/main">麻瓜编程</a>
-          </div>
-
-          <div class="collapse navbar-collapse" id="js-navbar-collapse" ng-controller="UserCtrl">
-
-            <ul class="nav navbar-nav">
-              <!-- <li class="active"><a href="#/">Home</a></li> -->
-              <li><a ng-href="#/tutorial">魔力教程</a></li>
-              <li><a ng-href="#/course">实战课程</a></li>
-            </ul>
-
-            <ul class="userc list-unstyled ng-cloak" ng-cloak ng-if="!$userinfo.id">
-              <li><a href="#/login">登录</a></li>
-            </ul>
-            <ul class="userc list-unstyled ng-cloak" ng-cloak ng-if="$userinfo.id">
-              <li><span>{{$userinfo.name}}</span></li>
-              <li><a href="javascript:;" ng-click="logout()">退出</a></li>
-            </ul>
-
-          </div>
-
-        </div>
-      </div>
-    </div>
-
+<!-- Add your site or application content here -->
+<div class="header">
+  <div class="navbar navbar-default" role="navigation">
     <div class="container">
-    <div ng-view=""></div>
-    </div>
+      <div class="navbar-header">
 
-    <div class="footer">
-      <div class="container">
-        <p>@muggle code</p>
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+        <a class="navbar-brand" href="#/main">麻瓜编程</a>
       </div>
+
+      <div class="collapse navbar-collapse" id="js-navbar-collapse" ng-controller="UserCtrl">
+
+        <ul class="nav navbar-nav">
+          <!-- <li class="active"><a href="#/">Home</a></li> -->
+          <li><a ng-href="#/tutorial">魔力教程</a></li>
+          <li><a ng-href="#/course">实战课程</a></li>
+        </ul>
+
+        <ul class="userc list-unstyled ng-cloak" ng-cloak ng-if="!$userinfo.id">
+          <li><a href="#/login">登录</a></li>
+        </ul>
+        <ul class="userc list-unstyled ng-cloak " ng-cloak ng-if="$userinfo.id">
+          <li><a href ="#/mycourse">{{$userinfo.name}}</a>
+            <!--<ul>-->
+              <!--<li><a href="#/mycourse">我的资料</a></li>-->
+              <!--<li><a href="#/mycourse">我的课程</a></li>-->
+            <!--</ul>-->
+          </li>
+          <li><a href="javascript:;" ng-click="logout()">退出</a></li>
+        </ul>
+
+      </div>
+
     </div>
+  </div>
+</div>
 
-    <!-- build:js(.) scripts/vendor.js -->
-    <!-- bower:js -->
-    <script src="bower_components/jquery/dist/jquery.js"></script>
-    <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
-    <script src="bower_components/angular-animate/angular-animate.js"></script>
-    <script src="bower_components/angular-aria/angular-aria.js"></script>
-    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
-    <script src="bower_components/angular-messages/angular-messages.js"></script>
-    <script src="bower_components/angular-resource/angular-resource.js"></script>
-    <script src="bower_components/angular-route/angular-route.js"></script>
-    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
-    <script src="bower_components/angular-touch/angular-touch.js"></script>
-    <!-- endbower -->
-    <!-- endbuild -->
+<div class="container">
+  <div ng-view=""></div>
+</div>
 
-        <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="scripts/app.js"></script>
-        <script src="scripts/api.js"></script>
-        <script src="scripts/services/user.js"></script>
-        <script src="scripts/services/course.js"></script>
-        <script src="scripts/controllers/base.js"></script>
-        <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/controllers/tutorial.js"></script>
-        <script src="scripts/controllers/course.js"></script>
-        <script src="scripts/controllers/user.js"></script>
-        <!-- endbuild -->
+<div class="footer">
+  <div class="container">
+    <p>@muggle code</p>
+  </div>
+</div>
+
+<!-- build:js(.) scripts/vendor.js -->
+<!-- bower:js -->
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
+<script src="bower_components/angular-animate/angular-animate.js"></script>
+<script src="bower_components/angular-aria/angular-aria.js"></script>
+<script src="bower_components/angular-cookies/angular-cookies.js"></script>
+<script src="bower_components/angular-messages/angular-messages.js"></script>
+<script src="bower_components/angular-resource/angular-resource.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script src="bower_components/angular-touch/angular-touch.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
+
+<!-- build:js({.tmp,app}) scripts/scripts.js -->
+<script src="scripts/app.js"></script>
+<script src="scripts/api.js"></script>
+<script src="scripts/services/user.js"></script>
+<script src="scripts/services/course.js"></script>
+<script src="scripts/controllers/base.js"></script>
+<script src="scripts/controllers/main.js"></script>
+<script src="scripts/controllers/tutorial.js"></script>
+<script src="scripts/controllers/course.js"></script>
+<script src="scripts/controllers/user.js"></script>
+<!-- endbuild -->
 </body>
 </html>
