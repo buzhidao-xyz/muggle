@@ -33,6 +33,7 @@ angular.module('muggleApp')
         var data = {
           courseid: courseid
         }
+        var data = BaseCtrl.apiRequestData(data);
         //getcourseview
         $CourseService.getcourseview({}, data);
 
@@ -42,5 +43,22 @@ angular.module('muggleApp')
         })
       }
       $scope.doCourseView();
+
+      //播放课程
+      $scope.viewClass = function () {
+        function polyv() {
+          if (typeof polyvObject=='undefined') {
+            setTimeout("polyv()", 10);
+          } else {
+            var player = polyvObject('#plv_93d816c8ccec0d19784cf4f277d9b4fa_9').videoPlayer({
+                'width':'815',
+                'height':'458',
+                'vid' : '93d816c8ccec0d19784cf4f277d9b4fa_9'
+            });
+          }
+        }
+        polyv();
+      }
+      $scope.viewClass();
 
     }]);

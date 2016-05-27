@@ -32,7 +32,7 @@ angular.module('muggleApp')
 
       //监听事件 - apiRequest.failed
       $scope.$on('apiRequest.failed', function (event, d) {
-        $scope.alertShow($scope.errormsg);
+        // $scope.alertShow($scope.errormsg);
       });
 
       //写入cookie-userinfo

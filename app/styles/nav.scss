@@ -1,3 +1,47 @@
+$navacolor: #f3adb3;
+$navahover: #FFFFFF;
+$navasize: 19px;
+
+@mixin nav-a-p {
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.navbar {
+	margin-bottom: 0;
+	border: 0;
+	min-height: 85px;
+}
+.navbar-default {
+	background-color: transparent;
+
+	a {
+		color: $navacolor;
+		font-size: $navasize;
+		font-weight: bold;
+		margin-top: 17px;
+		@include nav-a-p;
+
+		&:hover, &:focus {
+			color: $navahover;
+		}
+	}
+	a.navbar-brand {
+		color: #E1E1E1;
+		font-size: $navasize;
+
+		&:hover, &:focus {
+			color: #E1E1E1;
+		}
+	}
+	.navbar-nav > li > a {
+		color: $navacolor;
+
+		&:hover, &:focus {
+			color: $navahover;
+		}
+	}
+}
 .userc {
 	margin-bottom: 0;
 }

@@ -1,0 +1,259 @@
+.courseview {
+	display: block;
+	overflow: hidden;
+	height: 100%;
+	background: #2b2f3e;
+
+	.menu {
+		color: #FFFFFF;
+		height: 100%;
+		padding-left: 0;
+		padding-right: 0;
+
+		h3, h4, h5 {
+			margin: 0;
+			padding-left: 30px;
+		}
+
+		h3.title {
+			font-size: 18px;
+			padding: 45px 0 35px 55px;
+			background: url("../images/web/icon_arrow_left.png") no-repeat 15px 31px;
+		}
+		a {
+			color: #82848a;
+			text-decoration: none;
+			word-spacing: 3px;
+
+			&:hover {
+				color: #E1E1E1;
+			}
+		}
+		a.learned {
+			color: #E1E1E1;
+
+			&:hover {
+				color: #F1F1F1;
+			}
+		}
+		a.active {
+			color: #7edcee;
+
+			&:hover {
+				color: #7edcee;
+			}
+		}
+
+		.zhangbox {
+			h4 {
+				font-size: 16px;
+				padding-top: 27px;
+				padding-bottom: 27px;
+				cursor: pointer;
+
+				&:hover {
+					color: #FFFFFF;
+					background: #7edcee;
+
+					a {
+						color: #F1F1F1;
+					}
+				}
+			}
+			.jiebox {
+				display: none;
+				padding-left: 30px;
+				padding-bottom: 15px;
+
+				h5 {
+					margin-left: 14px;
+					padding-left: 0;
+					padding-top: 15px;
+					padding-bottom: 15px;
+
+					a {
+						font-size: 14px;
+						padding-left: 18px;
+					}
+					a::before {
+						display: none;
+					}
+					a.active::before {
+					    display: block;
+					    content: " ";
+					    font-size: 14px;
+						background: #7edcee;
+					    width: 8px;
+					    height: 8px;
+					    float: left;
+					    margin-top: -11px;
+					    position: absolute;
+					    border-radius: 4px;
+					}
+				}
+				h5::before {
+				    content: " ";
+				    font-size: 14px;
+				    margin-left: 4px;
+					padding: 15px 5px 15px 5px;
+				    border-left: 1px solid #555968;
+				}
+				h5:first-child {
+					a::before {
+						margin-top: -13px;
+					}
+				}
+				h5:first-child::before {
+				    border-top: 1px solid #555968;
+				    margin-top: 6px;
+				    display: block;
+				    float: left;
+				}
+				h5:last-child::before {
+				    border-bottom: 1px solid #555968;
+				    margin-top: -22px;
+				    display: block;
+				    float: left;
+				}
+				.first.last::before {
+					border-bottom: 1px solid #555968;
+				    margin-top: 7px;
+				    display: block;
+				    float: left;
+				    height: 0;
+				    padding-top: 0;
+				    padding-bottom: 0;
+				    border-top: 0;
+				}
+				.first.last {
+					a.active::before {
+				    	margin-top: -11px;
+				    }
+				}
+			}
+		}
+		.zhangbox.expand {
+			background: url("../images/web/course_menu_expand_bg.png") repeat-y left #373c4e;
+			border-top: 1px solid #A1A1A1;
+
+			.jiebox {
+				display: block;
+			}
+		}
+
+		@media screen and (-webkit-min-device-pixel-ratio:0) {
+			.zhangbox {
+				.jiebox {
+					h5:first-child {
+						a::before {
+							margin-top: 3px;
+						}
+					}
+					h5:last-child {
+						a::before {
+							margin-top: 4px;
+						}
+					}
+					.first.last {
+						a.active::before {
+					    	margin-top: 3px;
+					    }
+					}
+				}
+			}
+		}
+	}
+
+	.view {
+		background: #EEEEEE;
+		color: #000;
+		height: 100%;
+		padding-left: 0;
+		padding-right: 0;
+
+		h2.title {
+			font-size: 24px;
+			background: #FFFFFF;
+			margin: 0;
+			padding: 38px 0px 38px 30px;
+			overflow: hidden;
+
+			img.colspan {
+				float: left;
+				display: block;
+				margin-top: 3px;
+				cursor: pointer;
+			}
+			span {
+				display: block;
+				float: left;
+				height: 24px;
+				line-height: 24px;
+				margin-left: 20px;
+			}
+		}
+
+		.video {
+			margin-left: 30px;
+			margin-top: 30px;
+			width: 815px;
+			height: 456px;
+		}
+
+		.faq {
+			margin-left: 30px;
+			margin-top: 30px;
+			margin-bottom: 30px;
+			background: #FFFFFF;
+			border-radius: 5px;
+			width: 815px;
+			height: auto;
+			padding: 20px;
+
+			h4 {
+				font-size: 17px;
+				padding-left: 0px;
+
+				span.icon {
+					position: absolute;
+					width: 8px;
+					height: 8px;
+					display: block;
+					background: #7edcee;
+					border-radius: 4px;
+					margin-top: 3px;
+				}
+				span.title {
+					margin-left: 20px;
+				}
+			}
+
+			ul {
+				margin-top: 15px;
+
+				li {
+					padding-left: 20px;
+					padding-top: 10px;
+					padding-bottom: 10px;
+
+					a {
+						color: #000;
+						font-size: 13px;
+
+						&:hover, &:focus {
+							color: #7edcee;
+						}
+					}
+					a.active {
+						color: #7edcee;
+						text-decoration: underline;
+
+						&:hover, &:focus {
+							color: #7edcee;
+						}
+					}
+				}
+			}
+		}
+	}
+}

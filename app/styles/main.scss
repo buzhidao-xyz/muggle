@@ -9,6 +9,13 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 @import "nav.scss";
 //import login:scss
 @import "login.scss";
+//import course:scss
+@import "course.scss";
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
 
 .ng-cloak {
   display: none;
@@ -29,14 +36,20 @@ body {
 .header,
 .marketing,
 .footer {
+  width: 100%;
+  position: fixed;
   padding-left: 15px;
   padding-right: 15px;
+  z-index: 99;
 }
 
 /* Custom page header */
 .header {
-  border-bottom: 1px solid #e5e5e5;
-  margin-bottom: 10px;
+  // border-bottom: 1px solid #e5e5e5;
+  // margin-bottom: 10px;
+  border-bottom: 0;
+  background: #e63049;
+  top: 0;
 
   /* Make the masthead heading the same height as the navigation */
   h3 {
@@ -47,11 +60,16 @@ body {
   }
 }
 
+/* Custom page contenter */
+.contenter {
+}
+
 /* Custom page footer */
 .footer {
   padding-top: 19px;
   color: #777;
   border-top: 1px solid #e5e5e5;
+  background: #FFF;
 }
 
 .container-narrow > hr {
@@ -93,10 +111,49 @@ body {
   }
   /* Space out the masthead */
   .header {
-    margin-bottom: 30px;
+    // margin-bottom: 30px;
   }
   /* Remove the bottom border on the jumbotron for visual effect */
   .jumbotron {
     border-bottom: 0;
+  }
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 1200px) {
+  .container {
+    max-width: 1170px;
+  }
+
+  .header {
+    height: 85px;
+    min-height: 85px;
+    max-height: 85px;
+
+    .container {
+      bottom: 0;
+      padding-right: 20px;
+    }
+  }
+
+  .contenter {
+    position: absolute;
+    top: 85px;
+    bottom: 50px;
+    left: 50%;
+    margin-left: -585px;
+    padding-left: 0;
+    padding-right: 0;
+
+    .contenterview {
+      min-height: 100%;
+      margin-bottom: 50px;
+    }
+  }
+
+  .footer {
+    height: 50px;
+    padding-top: 15px;
+    bottom: 0;
   }
 }
