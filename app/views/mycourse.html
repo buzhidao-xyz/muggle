@@ -3,21 +3,18 @@
 
   <p>欢迎来到麻瓜编程的世界</p>
 </div>
-<div class="container">
+<div class="container-fluid">
   <div class="row row-offcanvas row-offcanvas-right">
     <div class="row">
 
       <div ng-repeat="$course in $courseList.items">
-        <div class="col-xs-11 col-lg-5 course">
-          <h2><img src="{{$course.logo}}"
-                   style="width: 100%; height: 100%;max-height: 190px;max-width: 285px"></h2>
-
-          <p><span style="font-size: 20px">{{$course.title}} </span></p>
-
-          <p align="right"><a class="btn btn-success" href="#" role="button">继续学习</a></p>
+        <div class="col-xs-11 col-sm-5 course">
+          <h2><a href="#/courseview?courseid={{$course.id}}"><img src="{{$course.logo}}"
+                   style="width: 100%; height: 100%;max-height: 312px;max-width: 468px"></a></h2>
+          <h3>{{$course.title}}</h3>
+          <p align="right"><a class="btn btn-success" href="#/courseview?courseid={{$course.id}}" role="button">继续学习</a></p>
         </div>
       </div>
-
     </div>
     <!--/row-->
   </div>
