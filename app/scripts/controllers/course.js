@@ -33,8 +33,8 @@ angular.module('muggleApp')
         var data = BaseCtrl.apiRequestData(data);
         $CourseService.getcourselist({}, data);
 
-        $scope.$on('courses.success', function (event, d) {
-          $scope.courseList = BaseCtrl.apiResult($CourseService.courselist);
+        $scope.$on('courselist.success', function (event, d) {
+          $scope.$courseList = BaseCtrl.apiResult($CourseService.courselist);
         })
       }
       $scope.doCourseList();
