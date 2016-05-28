@@ -9,6 +9,7 @@
 		min-height: 100%;
 		padding-left: 0;
 		padding-right: 0;
+		display: block;
 
 		h3, h4, h5 {
 			margin: 0;
@@ -170,6 +171,7 @@
 		height: 100%;
 		padding-left: 0;
 		padding-right: 0;
+		overflow: hidden;
 
 		h2.title {
 			font-size: 24px;
@@ -193,11 +195,23 @@
 			}
 		}
 
-		.video {
-			margin-left: 30px;
-			margin-top: 30px;
-			width: 815px;
-			height: 456px;
+		.content {
+			min-height: 300px;
+			padding: 0;
+
+			.contentview {
+				margin-top: 30px;
+				padding-left: 30px;
+				// padding-right: 30px;
+				min-height: 460px;
+				text-align: center;
+				border-top: 1px solid #EEEEEE;
+			}
+
+			.mdview {
+				margin-top: 0;
+				background: #FFFFFF;
+			}
 		}
 
 		.faq {
@@ -206,9 +220,7 @@
 			margin-bottom: 30px;
 			// background: #FFFFFF;
 			border-radius: 5px;
-			width: 815px;
-			height: auto;
-			padding: 20px;
+			padding: 0 20px;
 
 			h4 {
 				font-size: 17px;

@@ -21,8 +21,8 @@ angular.module('muggleApp')
           data: data
         }).success(function (data, status) {
           service.courselist = data;
-          //广播事件 - courselist.success
-          $rootScope.$broadcast('courselist.success');
+          //广播事件 - getcourselist.success
+          $rootScope.$broadcast('getcourselist.success');
         }).error(function (param, data) {
           //广播事件 - apiRequest.failed
           $rootScope.$broadcast('apiRequest.failed');
@@ -45,6 +45,36 @@ angular.module('muggleApp')
         }).error(function (param, data) {
           //广播事件 - getcourseview.failed
           $rootScope.$broadcast('apiRequest.failed');
+        });
+      },
+
+      //chapterinfo
+      chapterinfo: {},
+      getchapterinfo: function (params, data) {
+        var url = Api.host + Api.course.getchapterinfo.u;
+        $http({
+          method: Api.course.getchapterinfo.m,
+          url: url,
+          params: params,
+          data: data
+        }).success(function (data, status) {
+          service.chapterinfo = data;
+          //广播事件 - getchapterinfo.success
+          $rootScope.$broadcast('getchapterinfo.success');
+        }).error(function (param, data) {
+          //广播事件 - getchapterinfo.failed
+          $rootScope.$broadcast('apiRequest.failed');
+        });
+      },
+
+      //learnchapter
+      learnchapter: function (params, data) {
+        var url = Api.host + Api.course.learnchapter.u;
+        $http({
+          method: Api.course.learnchapter.m,
+          url: url,
+          params: params,
+          data: data
         });
       }
     }

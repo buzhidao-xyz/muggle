@@ -25,7 +25,8 @@ angular.module('muggleApp')
       //BaseCtrl
       var BaseCtrl = $controller('BaseCtrl', {$rootScope: $rootScope, $scope: $scope});
 
-      $scope.doCourseList = function () {
+      //获取全部课程列表
+      $scope.getCourseList = function () {
         var data = {
           page: 0,
           size: 0
@@ -33,9 +34,26 @@ angular.module('muggleApp')
         var data = BaseCtrl.apiRequestData(data);
         $CourseService.getcourselist({}, data);
 
-        $scope.$on('courselist.success', function (event, d) {
+        $scope.$on('getcourselist.success', function (event, d) {
           $scope.$courseList = BaseCtrl.apiResult($CourseService.courselist);
         })
       }
-      $scope.doCourseList();
+
+      //获取我的课程列表
+      $scope.getMyCourseList = function () {
+        console.log('mycourse');
+      }
+
+      //页面逻辑
+      var path = $route.current.originalPath;
+      switch (path) {
+        case '/course':
+          $scope.getCourseList();
+          break;
+        case '/mycourse':
+          $scope.getMyCourseList();
+          break;
+        default:
+          break;
+      }
     }]);

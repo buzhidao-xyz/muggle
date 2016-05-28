@@ -27,12 +27,12 @@ angular.module('muggleApp')
 
       //页面msg提示
       $scope.alertShow = function (msg, flag) {
-        alert(msg);
+        // alert(msg);
       }
 
       //监听事件 - apiRequest.failed
       $scope.$on('apiRequest.failed', function (event, d) {
-        // $scope.alertShow($scope.errormsg);
+        $scope.alertShow($scope.errormsg);
       });
 
       //写入cookie-userinfo

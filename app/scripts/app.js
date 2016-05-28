@@ -62,7 +62,12 @@ angular
         controller: 'CourseCtrl',
         controllerAs: 'course'
       })
-      .when('/courseview',{
+      .when('/courseview/courseid/:courseid',{
+        templateUrl: 'views/courseview.html',
+        controller: 'CourseViewCtrl',
+        controllerAs: 'courseview'
+      })
+      .when('/courseview/courseid/:courseid/chapterid/:chapterid',{
         templateUrl: 'views/courseview.html',
         controller: 'CourseViewCtrl',
         controllerAs: 'courseview'

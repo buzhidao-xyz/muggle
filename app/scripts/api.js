@@ -23,9 +23,21 @@ var Api = {
       m: 'post',
       u: 'c/list'
     },
-    getcourseview: {
+    getcourseinfo: {
       m: 'post',
       u: 'c/info'
+    },
+    getcourseview: {
+      m: 'post',
+      u: 's/course/info'
+    },
+    learnchapter: {
+      m: 'post',
+      u: 's/course/read'
+    },
+    getchapterinfo: {
+      m: 'post',
+      u: 'c/chapter/details'
     }
   }
 }
