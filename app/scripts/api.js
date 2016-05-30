@@ -38,6 +38,10 @@ var Api = {
     getchapterinfo: {
       m: 'post',
       u: 'c/chapter/details'
+    },
+    getmycourselist:{
+      m:'post',
+      u:'s/course/list'
     }
   }
 }

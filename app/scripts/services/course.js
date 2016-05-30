@@ -29,6 +29,24 @@ angular.module('muggleApp')
         });
       },
 
+      mycourselist: {},
+      getmycourselist: function (params, data) {
+        var url = Api.host + Api.course.getmycourselist.u;
+        $http({
+          method: Api.course.getmycourselist.m,
+          url: url,
+          params: params,
+          data: data
+        }).success(function (data, status) {
+          service.mycourselist = data;
+          //广播事件 - getcourselist.success
+          $rootScope.$broadcast('getmycourselist.success');
+        }).error(function (param, data) {
+          //广播事件 - apiRequest.failed
+          $rootScope.$broadcast('apiRequest.failed');
+        });
+      },
+
       //courseview
       courseview: {},
       getcourseview: function (params, data) {

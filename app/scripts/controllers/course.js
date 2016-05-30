@@ -41,7 +41,17 @@ angular.module('muggleApp')
 
       //获取我的课程列表
       $scope.getMyCourseList = function () {
-        console.log('mycourse');
+        var data = {
+          page: 0,
+          size: 0,
+          ty: 1
+        }
+        var data = BaseCtrl.apiRequestData(data);
+        $CourseService.getmycourselist({}, data);
+        //console.log('mycourse');
+        $scope.$on('getmycourselist.success', function (event, d) {
+          $scope.$mycourseList = BaseCtrl.apiResult($CourseService.mycourselist);
+        })
       }
 
       //页面逻辑
