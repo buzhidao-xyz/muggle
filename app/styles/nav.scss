@@ -10,7 +10,6 @@ $navasize: 19px;
 .navbar {
 	margin-bottom: 0;
 	border: 0;
-	min-height: 85px;
 }
 .navbar-default {
 	background-color: transparent;
@@ -19,7 +18,6 @@ $navasize: 19px;
 		color: $navacolor;
 		font-size: $navasize;
 		font-weight: bold;
-		margin-top: 17px;
 		margin-left: 0;
 		@include nav-a-p;
 
@@ -28,6 +26,8 @@ $navasize: 19px;
 		}
 	}
 	a.navbar-brand {
+		height: 70px;
+		padding: 25px 25px;
 		margin-left: 0;
 		color: #E1E1E1;
 		font-size: $navasize;
@@ -36,11 +36,16 @@ $navasize: 19px;
 			color: #E1E1E1;
 		}
 	}
-	.navbar-nav > li > a {
-		color: $navacolor;
+	.navbar-nav {
+		margin-left:  0;
+		margin-right:  0;
 
-		&:hover, &:focus {
-			color: $navahover;
+		li > a {
+			color: $navacolor;
+
+			&:hover, &:focus {
+				color: $navahover;
+			}
 		}
 	}
 }
@@ -68,9 +73,35 @@ $coursecolor: #666;
    margin-bottom:6%;
  }
 
+@media (min-width: 320px) {
+	.navbar-default {
+		a {
+			margin-top: 0;
+		}
+
+		.navbar-toggle {
+			border: 0;
+		    padding: 0;
+		    margin-top: 13px;
+		    margin-bottom: 0;
+		}
+
+		.navbar-toggle:hover, .navbar-toggle:focus {
+			background-color: transparent;
+		}
+	}
+}
+
 @media (min-width: 768px) {
+	.navbar-default {
+		a {
+			margin-top: 17px;
+		}
+	}
 	.navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand {
 		margin-left: 0;
+		padding-top: 15px;
+		padding-bottom: 15px;
 	}
 
 	.userc {
