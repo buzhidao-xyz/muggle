@@ -40,7 +40,6 @@ body {
 .marketing,
 .footer {
   width: 100%;
-  position: fixed;
   padding-left: 15px;
   padding-right: 15px;
   z-index: 99;
@@ -53,6 +52,7 @@ body {
   border-bottom: 0;
   background: #e63049;
   top: 0;
+  position: fixed;
 
   /* Make the masthead heading the same height as the navigation */
   h3 {
@@ -72,6 +72,7 @@ body {
 .contenter {
   width: 100%;
   max-width: 100%;
+  position: relative;
 }
 
 /* Custom page footer */
@@ -106,6 +107,15 @@ body {
   }
 }
 
+@media (min-width: 320px) {
+  .header {
+  }
+
+  .contenter {
+    margin-top: 70px;
+  }
+  
+}
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   .container {
@@ -123,6 +133,11 @@ body {
   .header {
     // margin-bottom: 30px;
   }
+
+  .contenter {
+    margin-top: 85px;
+  }
+
   /* Remove the bottom border on the jumbotron for visual effect */
   .jumbotron {
     border-bottom: 0;
@@ -147,12 +162,7 @@ body {
   }
 
   .contenter {
-    position: absolute;
-    // background: #EEEEEE;
-    top: 85px;
-    left: 0;
-    right: 0;
-    margin-bottom: 50px;
+    margin-top: 85px;
 
     .contenterview {
       width: 100%;
