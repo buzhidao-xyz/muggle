@@ -12,6 +12,7 @@
   <!-- endbuild -->
   <!-- build:css(.tmp) styles/main.css -->
   <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="plugins/malihu-custom-scrollbar-plugin-3.1.3/jquery.mCustomScrollbar.min.css" />
   <!-- endbuild -->
 </head>
 <body ng-app="muggleApp">
@@ -65,9 +66,7 @@
 </div>
 
 <div class="contenter">
-  <div class="contenterview">
-    <div class="container" ng-view=""></div>
-  </div>
+  <div class="container" ng-view=""></div>
 </div>
 
 <div class="footer">
@@ -105,5 +104,8 @@
 <script src="scripts/controllers/courseview.js"></script>
 <script src="scripts/controllers/user.js"></script>
 <!-- endbuild -->
+
+<script src="plugins/malihu-custom-scrollbar-plugin-3.1.3/jquery.mCustomScrollbar.concat.min.js"></script>
+
 </body>
 </html>

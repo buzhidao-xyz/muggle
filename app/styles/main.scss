@@ -14,6 +14,7 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 
 html, body {
   height: 100%;
+  min-height: 100%;
   margin: 0;
 }
 * {
@@ -43,6 +44,7 @@ body {
   padding-left: 15px;
   padding-right: 15px;
   z-index: 99;
+  position: fixed;
 }
 
 /* Custom page header */
@@ -52,7 +54,6 @@ body {
   border-bottom: 0;
   background: #e63049;
   top: 0;
-  position: fixed;
 
   /* Make the masthead heading the same height as the navigation */
   h3 {
@@ -71,8 +72,11 @@ body {
 /* Custom page contenter */
 .contenter {
   width: 100%;
-  max-width: 100%;
-  position: relative;
+  position: absolute;
+
+  .container {
+    margin-bottom: 50px;
+  }
 }
 
 /* Custom page footer */
@@ -81,6 +85,7 @@ body {
   color: #777;
   border-top: 1px solid #e5e5e5;
   background: #FFF;
+  bottom: 0;
 }
 
 .container-narrow > hr {
@@ -162,20 +167,9 @@ body {
   }
 
   .contenter {
-    margin-top: 85px;
-
-    .contenterview {
-      width: 100%;
-      margin: 0 auto;
-      padding-left: 0;
-      padding-right: 0;
-      background: url("../images/web/contenter_bg_top.png") repeat-x;
-      background-size: 100% 100px;
-
-      .container {
-        
-      }
-    }
+    top: 85px;
+    bottom: 50px;
+    margin-top: 0;
   }
 
   .footer {

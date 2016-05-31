@@ -35,7 +35,7 @@ angular.module('muggleApp')
 
       //获取课程详情 - 目录章节信息
       $scope.doCourseView = function () {
-        //章节菜单栏收起-展开
+        //章节菜单栏左右-收起/展开
         $scope.menuExpand = function (e) {
           var menuObj = $('#menu');
           var viewObj = $('#view');
@@ -49,6 +49,20 @@ angular.module('muggleApp')
           }
         }
 
+        //章节菜单栏上下-收起/展开
+        $scope.menuToggle = function (e) {
+          var menuObj = $('#menu');
+          var viewObj = $('#view');
+
+          if (menuObj.css("display") == "block") {
+            menuObj.slideUp();
+            viewObj.removeClass('col-lg-9').addClass('col-lg-12');
+          } else {
+            menuObj.slideDown();
+            viewObj.removeClass('col-lg-12').addClass('col-lg-9');
+          }
+        }
+
         //章节展开收缩
         $scope.zhangExpand = function (e) {
           var zhangObj = $(e.target).parents('.zhangbox');
@@ -57,6 +71,27 @@ angular.module('muggleApp')
           } else {
             zhangObj.addClass('expand');
           }
+        }
+
+        //view滚动条模拟
+        $scope.viewScroll = function () {
+          setTimeout(function () {
+            $("#menubox").mCustomScrollbar({
+              axis: "y",
+              theme: "minimal-dark",
+              scrollbarPosition: "outside",
+              mouseWheel:{ scrollAmount: 650 },
+              scrollButtons:{ scrollAmount: 650 }
+            });
+
+            $("#view .content").mCustomScrollbar({
+              axis: "y",
+              theme: "minimal-dark",
+              scrollbarPosition: "outside",
+              mouseWheel:{ scrollAmount: 650 },
+              scrollButtons:{ scrollAmount: 650 }
+            });
+          }, 100);
         }
 
         //获取课程信息
@@ -89,12 +124,14 @@ angular.module('muggleApp')
               //课程视频初始化
               var vid = $scope.$chapterinfo.videoid;
               var player = polyvObject('#videoview').videoPlayer({
-                'width':'840',
+                'width':'100%',
                 'height':'0',
                 'vid' : vid,
                 'flashParams':{'wmode':'window','setScreen':'100','allowScriptAccess':'always','allowFullScreen':'true'}
               });
             }
+
+            $scope.viewScroll();
           });
         }
 

@@ -1,14 +1,16 @@
 <div class="courseview">
 	<div id="menu" class="menu col-lg-3 col-sm-12">
 		<h3 class="title" ng-cloak class="ng-cloak">{{$courseview.title}}</h3>
-		<div class="zhangbox {{$zhanginfo.expandclass}}" ng-repeat="$zhanginfo in $courseview.chapterIs">
-			<h4 ng-click="zhangExpand($event)"><a href="javascript:;" class="learned">{{$zhanginfo.title}}</a></h4>
-			<div class="jiebox">
-				<h5 class="{{$jieinfo.classn}}" ng-repeat="$jieinfo in $courseview.chapterIIs[$zhanginfo.chapterid]">
-					<a href="#/courseview/courseid/{{$courseview.id}}/chapterid/{{$jieinfo.chapterid}}" class="" ng-if="($jieinfo.chapterid!=chapterid) && (!$jieinfo.study || $jieinfo.study==0)">{{$jieinfo.title}}</a>
-					<a href="#/courseview/courseid/{{$courseview.id}}/chapterid/{{$jieinfo.chapterid}}" class="learned" ng-if="($jieinfo.chapterid!=chapterid) && ($jieinfo.study==1)">{{$jieinfo.title}}</a>
-					<a href="#/courseview/courseid/{{$courseview.id}}/chapterid/{{$jieinfo.chapterid}}" class="active" ng-if="$jieinfo.chapterid==chapterid">{{$jieinfo.title}}</a>
-				</h5>
+		<div id="menubox" class="menubox">
+			<div class="zhangbox expand {{$zhanginfo.expandclass}}" ng-repeat="$zhanginfo in $courseview.chapterIs">
+				<h4 ng-click="zhangExpand($event)"><a href="javascript:;" class="learned">{{$zhanginfo.title}}</a></h4>
+				<div class="jiebox">
+					<h5 class="{{$jieinfo.classn}}" ng-repeat="$jieinfo in $courseview.chapterIIs[$zhanginfo.chapterid]">
+						<a href="#/courseview/courseid/{{$courseview.id}}/chapterid/{{$jieinfo.chapterid}}" class="" ng-if="($jieinfo.chapterid!=chapterid) && (!$jieinfo.study || $jieinfo.study==0)">{{$jieinfo.title}}</a>
+						<a href="#/courseview/courseid/{{$courseview.id}}/chapterid/{{$jieinfo.chapterid}}" class="learned" ng-if="($jieinfo.chapterid!=chapterid) && ($jieinfo.study==1)">{{$jieinfo.title}}</a>
+						<a href="#/courseview/courseid/{{$courseview.id}}/chapterid/{{$jieinfo.chapterid}}" class="active" ng-if="$jieinfo.chapterid==chapterid">{{$jieinfo.title}}</a>
+					</h5>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -16,28 +18,38 @@
 		<h2 class="title">
 			<img src="../images/web/icon_colspan_list.png" class="colspan" ng-click="menuExpand($event)">
 			<span>{{$chapterinfo.title}}</span>
+			<img src="../images/wap/@1x/xiala@1x.png" class="xiala img-responsive" ng-click="menuToggle($event)">
 		</h2>
 		<div class="content col-xs-12">
 			<div id="mdview" class="contentview mdview col-xs-12" ng-bind-html="$chapterinfo.markdowncontent" ng-if="($chapterinfo.ty==1)||($chapterinfo.ty==3)">
 			</div>
-			<div id="videoview" class="contentview col-xs-12" ng-if="$chapterinfo.ty==2">
+			<script src='//player.polyv.net/script/polyvplayer.min.js'></script>
+			<div id="videoview" class="contentview videoview col-xs-12" ng-if="$chapterinfo.ty==2">
 			</div>
 		</div>
-		<div class="faq col-xs-12">
-			<!-- <h4><span class="icon"></span><span class="title">常见问题</span></h4>
-			<ul class="list-unstyled">
-				<li><a href="javascript:;">这节课主要讲了什么？</a></li>
-				<li><a href="javascript:;" class="active">我的路径怎么看？</a></li>
-				<li><a href="javascript:;">找不到标签怎么办？</a></li>
-				<li><a href="javascript:;">为什么使用lxml？</a></li>
-			</ul> -->
+		<div class="faq" ng-if="$chapterinfo.ty==2">
+			<div class="col-xs-12">
+				<!-- <h4><span class="icon"></span><span class="title">常见问题</span></h4>
+				<ul class="list-unstyled">
+					<li><a href="javascript:;">这节课主要讲了什么？</a></li>
+					<li><a href="javascript:;" class="active">我的路径怎么看？</a></li>
+					<li><a href="javascript:;">找不到标签怎么办？</a></li>
+					<li><a href="javascript:;">为什么使用lxml？</a></li>
+				</ul> -->
+			</div>
 		</div>
 	</div>
 </div>
 <style type="text/css">
 @media screen and (min-width: 1200px) {
 	.contenter {
-		background: #EEEEEE;
+      background: url("../images/web/contenter_bg_top.png") repeat-x #EEEEEE;
+      background-size: 100% 100px;
+      overflow: hidden;
+	}
+	.contenter .container {
+      background: #EEEEEE;
+      height: 100%;
 	}
 }
 </style>
