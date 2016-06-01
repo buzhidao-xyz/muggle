@@ -2,9 +2,9 @@
 
 /**
  * @ngdoc function
- * @name muggleApp.controller:UserCtrl
+ * @name muggleApp.controller:UserService
  * @description
- * # UserCtrl
+ * # UserService
  * Controller of the muggleApp
  */
 angular.module('muggleApp')

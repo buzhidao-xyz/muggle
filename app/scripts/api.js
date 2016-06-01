@@ -5,7 +5,7 @@
  */
 var Api = {
   //host地址
-  host: 'http://192.168.10.108:8000/api/',
+  host: 'http://192.168.10.17/api/',
   //user
   user: {
     //login

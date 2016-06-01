@@ -1,3 +1,5 @@
+<script src='//player.polyv.net/script/polyvplayer.min.js'></script>
+<script src="plugins/malihu-custom-scrollbar-plugin-3.1.3/jquery.mCustomScrollbar.concat.min.js"></script>
 <div class="courseview">
 	<div id="menu" class="menu col-lg-3 col-sm-12">
 		<h3 class="title" ng-cloak class="ng-cloak">{{$courseview.title}}</h3>
@@ -16,14 +18,13 @@
 	</div>
 	<div id="view" class="view col-lg-9 col-sm-12">
 		<h2 class="title">
-			<img src="../images/web/icon_colspan_list.png" class="colspan" ng-click="menuExpand($event)">
+			<img src="images/web/icon_colspan_list.png" class="colspan" ng-click="menuExpand($event)">
 			<span>{{$chapterinfo.title}}</span>
-			<img src="../images/wap/@1x/xiala@1x.png" class="xiala img-responsive" ng-click="menuToggle($event)">
+			<img src="images/wap/@1x/xiala@1x.png" class="xiala img-responsive" ng-click="menuToggle($event)">
 		</h2>
-		<div class="content col-xs-12">
+		<div id="cview" class="content col-xs-12">
 			<div id="mdview" class="contentview mdview col-xs-12" ng-bind-html="$chapterinfo.markdowncontent" ng-if="($chapterinfo.ty==1)||($chapterinfo.ty==3)">
 			</div>
-			<script src='//player.polyv.net/script/polyvplayer.min.js'></script>
 			<div id="videoview" class="contentview videoview col-xs-12" ng-if="$chapterinfo.ty==2">
 			</div>
 		</div>
@@ -43,7 +44,7 @@
 <style type="text/css">
 @media screen and (min-width: 1200px) {
 	.contenter {
-      background: url("../images/web/contenter_bg_top.png") repeat-x #EEEEEE;
+      background: url("images/web/contenter_bg_top.png") repeat-x #EEEEEE;
       background-size: 100% 100px;
       overflow: hidden;
 	}

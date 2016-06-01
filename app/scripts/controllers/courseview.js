@@ -84,7 +84,7 @@ angular.module('muggleApp')
               scrollButtons:{ scrollAmount: 650 }
             });
 
-            $("#view .content").mCustomScrollbar({
+            $("#cview").mCustomScrollbar({
               axis: "y",
               theme: "minimal-dark",
               scrollbarPosition: "outside",
