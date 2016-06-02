@@ -13,6 +13,12 @@ var Api = {
       m: 'post',
       u: 's/login'
     },
+    //authlogin
+    authlogin: {
+      m: 'post',
+      u: 's/auth/login'
+    },
+    //logout
     logout: {
       m: 'post',
       u: 's/logout'

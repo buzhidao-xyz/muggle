@@ -40,42 +40,56 @@ angular
       .when('/main', {
         templateUrl: 'views/main.html',
         controller: 'MainCtrl',
-        controllerAs: 'main'
+        controllerAs: 'main',
+        cklogon: true
       })
       .when('/tutorial', {
         templateUrl: 'views/tutorial.html',
         controller: 'TutorialCtrl',
-        controllerAs: 'tutorial'
+        controllerAs: 'tutorial',
+        cklogon: true
       })
       .when('/course', {
         templateUrl: 'views/course.html',
         controller: 'CourseCtrl',
-        controllerAs: 'course'
+        controllerAs: 'course',
+        cklogon: true
       })
       .when('/login', {
         templateUrl: 'views/login.html',
         controller: 'UserCtrl',
-        controllerAs: 'user'
+        controllerAs: 'user',
+        cklogon: true
+      })
+      .when('/auth/token/:token/courseid/:courseid',{
+        templateUrl: 'views/login.html',
+        controller: 'AuthCtrl',
+        controllerAs: 'auth',
+        cklogon: false
       })
       .when('/mycourse',{
         templateUrl: 'views/mycourse.html',
         controller: 'CourseCtrl',
-        controllerAs: 'course'
+        controllerAs: 'course',
+        cklogon: true
       })
       .when('/courseview/courseid/:courseid',{
         templateUrl: 'views/courseview.html',
         controller: 'CourseViewCtrl',
-        controllerAs: 'courseview'
+        controllerAs: 'courseview',
+        cklogon: true
       })
       .when('/courseview/courseid/:courseid/chapterid/:chapterid',{
         templateUrl: 'views/courseview.html',
         controller: 'CourseViewCtrl',
-        controllerAs: 'courseview'
+        controllerAs: 'courseview',
+        cklogon: true
       })
       .when('/courseview/courseid/:courseid/token/:token',{
         templateUrl: 'views/courseview.html',
         controller: 'CourseViewCtrl',
-        controllerAs: 'courseview'
+        controllerAs: 'courseview',
+        cklogon: true
       })
       .otherwise({
         redirectTo: '/login'

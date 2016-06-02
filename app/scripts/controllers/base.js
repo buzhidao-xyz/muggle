@@ -25,6 +25,20 @@ angular.module('muggleApp')
       //预定义变量
       $scope.errormsg = "网络错误 请求失败！";
 
+      //path
+      $scope.path = ('current' in $route) ? $route.current.$$route.originalPath : '';
+
+      //tokenauth
+      $scope.tokenAuth = function () {
+        var $token = ('token' in $routeParams) ? $routeParams.token : '';
+
+        var $courseid = ('courseid' in $routeParams) ? '/courseid/' + $routeParams.courseid : '';
+
+        if ($token) {
+          $location.path("/auth/token/" + $token + $courseid);
+        }
+      }();
+
       //页面msg提示
       $scope.alertShow = function (msg, flag) {
         // alert(msg);
@@ -46,6 +60,10 @@ angular.module('muggleApp')
 
         return $userinfo;
       }
+      //获取sessionid
+      $rootScope.sessionid = $cookies.getObject('sessionid');
+      //获取userinfo
+      $rootScope.$userinfo = $scope.gsuserinfo();
 
       //销毁cookie-userinfo
       $scope.ususerinfo = function () {
@@ -55,10 +73,7 @@ angular.module('muggleApp')
 
       //登录验证
       $scope.checkLogin = function () {
-        //获取sessionid
-        $rootScope.sessionid = $cookies.getObject('sessionid');
-        //获取userinfo
-        $rootScope.$userinfo = $scope.gsuserinfo();
+        if (('current' in $route) && !$route.current.$$route.cklogon) return true;
 
         if (!$rootScope.$userinfo || !("id" in $rootScope.$userinfo) || !$rootScope.$userinfo.id) {
           $location.path('/login');

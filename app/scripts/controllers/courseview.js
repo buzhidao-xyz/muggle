@@ -118,8 +118,7 @@ angular.module('muggleApp')
             $scope.$chapterinfo = BaseCtrl.apiResult($CourseService.chapterinfo);
 
             if ($scope.$chapterinfo.ty==1 || $scope.$chapterinfo==3) {
-              // $scope.$chapterinfo.markdowncontent = unescape($scope.$chapterinfo.markdowncontent);
-              
+              // $scope.$chapterinfo.markdowncontent = unescape($scope.$chapterinfo.markdowncontent.replace(/\\u/g, "%u"));
             } else if ($scope.$chapterinfo.ty==2) {
               //课程视频初始化
               var vid = $scope.$chapterinfo.videoid;

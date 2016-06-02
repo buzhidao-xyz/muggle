@@ -55,7 +55,7 @@ angular.module('muggleApp')
       }
 
       //页面逻辑
-      var path = $route.current.originalPath;
+      var path = ('current' in $route) ? $route.current.$$route.originalPath : '';
       switch (path) {
         case '/course':
           $scope.getCourseList();
