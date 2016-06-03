@@ -59,10 +59,10 @@ angular
         templateUrl: 'views/login.html',
         controller: 'UserCtrl',
         controllerAs: 'user',
-        cklogon: true
+        cklogon: false
       })
       .when('/auth/token/:token/courseid/:courseid',{
-        templateUrl: 'views/login.html',
+        templateUrl: 'views/auth.html',
         controller: 'AuthCtrl',
         controllerAs: 'auth',
         cklogon: false

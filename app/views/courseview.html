@@ -2,15 +2,18 @@
 <script src="plugins/malihu-custom-scrollbar-plugin-3.1.3/jquery.mCustomScrollbar.concat.min.js"></script>
 <div class="courseview">
 	<div id="menu" class="menu col-lg-3 col-sm-12">
-		<h3 class="title" ng-cloak class="ng-cloak">{{$courseview.title}}</h3>
+		<h3 class="title" ng-cloak class="ng-cloak">
+			<a href="#/mycourse"><img src="images/web/icon_arrow_left.png" class="img-responsive navlink"></a>
+			<span>{{$courseview.title}}</span>
+		</h3>
 		<div id="menubox" class="menubox">
 			<div class="zhangbox expand {{$zhanginfo.expandclass}}" ng-repeat="$zhanginfo in $courseview.chapterIs">
 				<h4 ng-click="zhangExpand($event)"><a href="javascript:;" class="learned">{{$zhanginfo.title}}</a></h4>
 				<div class="jiebox">
 					<h5 class="{{$jieinfo.classn}}" ng-repeat="$jieinfo in $courseview.chapterIIs[$zhanginfo.chapterid]">
-						<a href="#/courseview/courseid/{{$courseview.id}}/chapterid/{{$jieinfo.chapterid}}" class="" ng-if="($jieinfo.chapterid!=chapterid) && (!$jieinfo.study || $jieinfo.study==0)">{{$jieinfo.title}}</a>
-						<a href="#/courseview/courseid/{{$courseview.id}}/chapterid/{{$jieinfo.chapterid}}" class="learned" ng-if="($jieinfo.chapterid!=chapterid) && ($jieinfo.study==1)">{{$jieinfo.title}}</a>
-						<a href="#/courseview/courseid/{{$courseview.id}}/chapterid/{{$jieinfo.chapterid}}" class="active" ng-if="$jieinfo.chapterid==chapterid">{{$jieinfo.title}}</a>
+						<a href="#/courseview/courseid/{{courseid}}/chapterid/{{$jieinfo.chapterid}}" class="" ng-if="($jieinfo.chapterid!=chapterid) && (!$jieinfo.study || $jieinfo.study==0)">{{$jieinfo.title}}</a>
+						<a href="#/courseview/courseid/{{courseid}}/chapterid/{{$jieinfo.chapterid}}" class="learned" ng-if="($jieinfo.chapterid!=chapterid) && ($jieinfo.study==1)">{{$jieinfo.title}}</a>
+						<a href="#/courseview/courseid/{{courseid}}/chapterid/{{$jieinfo.chapterid}}" class="active" ng-if="$jieinfo.chapterid==chapterid">{{$jieinfo.title}}</a>
 					</h5>
 				</div>
 			</div>

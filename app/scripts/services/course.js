@@ -94,6 +94,24 @@ angular.module('muggleApp')
           params: params,
           data: data
         });
+      },
+
+      //getqiniumdhtml
+      qnmdhtml: '',
+      getqnmd: function (url) {
+        $http({
+          method: 'get',
+          url: url,
+          responseType: 'text'
+        }).success(function (data, status) {
+          service.qnmdhtml = data;
+
+          //广播事件 - getqnmd.success
+          $rootScope.$broadcast('getqnmd.success');
+        }).error(function (param, data) {
+          //广播事件 - getqnmd.failed
+          $rootScope.$broadcast('apiRequest.failed');
+        });
       }
     }
     return service;

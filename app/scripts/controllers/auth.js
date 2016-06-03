@@ -23,20 +23,21 @@ angular.module('muggleApp')
         'Karma'
       ];
 
+      $scope.token = ('token' in $routeParams) ? $routeParams.token : '';
+      $scope.courseid = ('courseid' in $routeParams) ? $routeParams.courseid : '';
+
       //BaseCtrl
       var BaseCtrl = $controller('BaseCtrl', {$rootScope: $rootScope, $scope: $scope});
 
       //location:courseview
       $scope.courseview = function () {
-        $location.path('/courseview/courseid/' + $scope.courseid);
+        var path = '/courseview/courseid/' + $scope.courseid;
+        $location.path(path);
       }
 
       //doAuthLogin
       $scope.doAuthLogin = function () {
-        $scope.token = ('token' in $routeParams) ? $routeParams.token : '';
-        $scope.courseid = ('courseid' in $routeParams) ? $routeParams.courseid : '';
-
-        if (!$scope.token || !$scope.courseid) return false;
+        if (!$scope.token) return false;
 
         $scope.authlogin = function () {
           var data = {
