@@ -25,6 +25,8 @@ angular.module('muggleApp')
       //BaseCtrl
       var BaseCtrl = $controller('BaseCtrl', {$rootScope: $rootScope, $scope: $scope});
 
+      if ($rootScope.locationflag) return true;
+
       //courseid
       $scope.courseid = $routeParams.courseid;
       //chapterid
@@ -104,6 +106,15 @@ angular.module('muggleApp')
           $CourseService.getcourseview({}, data);
         }
 
+        //获取七牛markdown-html
+        $scope.getqnmd = function (url) {
+          $CourseService.getqnmd(url);
+          $scope.$on('getqnmd.success', function (event, d) {
+            $scope.$chapterinfo.markdowncontent = $CourseService.qnmdhtml;
+            $scope.viewScroll();
+          });
+        }
+
         //获取课程-节信息
         $scope.getChapterInfo = function () {
           var data = {
@@ -118,7 +129,7 @@ angular.module('muggleApp')
             $scope.$chapterinfo = BaseCtrl.apiResult($CourseService.chapterinfo);
 
             if ($scope.$chapterinfo.ty==1 || $scope.$chapterinfo==3) {
-              // $scope.$chapterinfo.markdowncontent = unescape($scope.$chapterinfo.markdowncontent.replace(/\\u/g, "%u"));
+              $scope.getqnmd($scope.$chapterinfo.markdownurl);
             } else if ($scope.$chapterinfo.ty==2) {
               //课程视频初始化
               var vid = $scope.$chapterinfo.videoid;
@@ -129,8 +140,6 @@ angular.module('muggleApp')
                 'flashParams':{'wmode':'window','setScreen':'100','allowScriptAccess':'always','allowFullScreen':'true'}
               });
             }
-
-            $scope.viewScroll();
           });
         }
 
@@ -141,6 +150,7 @@ angular.module('muggleApp')
             chapterid: $scope.chapterid
           }
           var data = BaseCtrl.apiRequestData(data);
+          console.log(data);
           $CourseService.learnchapter({}, data);
         }
 
@@ -191,11 +201,4 @@ angular.module('muggleApp')
         })
       }
       $scope.doCourseView();
-
-      //视频播放器对象
-      $scope.videoViewClass = function () {
-
-      }
-      $scope.videoViewClass();
-
     }]);

@@ -48,16 +48,4 @@ angular.module('muggleApp')
         });
       }
       $scope.doLogin();
-
-      $scope.doLogout = function () {
-        $scope.logout = function () {
-          var data = BaseCtrl.apiRequestData({});
-          $UserService.logout({},data);
-          BaseCtrl.ususerinfo();
-
-           $location.path('/login');
-          location.reload();
-        }
-      }
-      $scope.doLogout();
     }]);

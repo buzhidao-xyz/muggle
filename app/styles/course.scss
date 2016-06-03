@@ -24,7 +24,11 @@
 
 		h3.title {
 			font-size: 18px;
-			background: url("../images/web/icon_arrow_left.png") no-repeat 15px 31px;
+			
+			.navlink {
+				float: left;
+				margin-top: -14px;
+			}
 		}
 		a {
 			color: #82848a;
@@ -217,7 +221,7 @@
 
 			.contentview {
 				min-height: 100%;
-				text-align: center;
+				// text-align: center;
 			}
 
 			.mdview {
@@ -293,8 +297,7 @@
 			display: none;
 
 			h3.title {
-				padding: 25px 0 25px 55px;
-				background-position: 15px 12px;
+				padding: 25px 0 25px 11px;
 			}
 		}
 
@@ -342,8 +345,7 @@
 			}
 
 			h3.title {
-				padding: 45px 0 35px 55px;
-				background-position: 15px 31px;
+				padding: 45px 0 35px 11px;
 			}
 		}
 

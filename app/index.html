@@ -37,7 +37,7 @@
         <a class="navbar-brand" href="#/main">麻瓜编程</a>
       </div>
 
-      <div class="collapse navbar-collapse" id="js-navbar-collapse" ng-controller="UserCtrl">
+      <div class="collapse navbar-collapse" id="js-navbar-collapse" ng-controller="HeaderCtrl">
 
         <ul class="nav navbar-nav">
           <!-- <li class="active"><a href="#/">Home</a></li> -->
@@ -55,7 +55,7 @@
               <!--<li><a href="#/mycourse">我的课程</a></li>-->
             <!--</ul>-->
           </li>
-          <li><a href="javascript:;" ng-click="logout()">退出</a></li>
+          <li><a href="javascript:;" class="logout" ng-click="logout()">退出</a></li>
         </ul>
 
       </div>
@@ -97,6 +97,7 @@
 <script src="scripts/services/course.js"></script>
 <script src="scripts/services/auth.js"></script>
 <script src="scripts/controllers/base.js"></script>
+<script src="scripts/controllers/header.js"></script>
 <script src="scripts/controllers/main.js"></script>
 <script src="scripts/controllers/tutorial.js"></script>
 <script src="scripts/controllers/course.js"></script>
