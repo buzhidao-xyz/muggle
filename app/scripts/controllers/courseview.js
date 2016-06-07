@@ -150,7 +150,8 @@ angular.module('muggleApp')
           //监听 - getchapterinfo.success
           $scope.$on('getchapterinfo.success', function (event, d) {
             $scope.$chapterinfo = BaseCtrl.apiResult($CourseService.chapterinfo);
-            $scope.menuScroll();
+
+            $scope.$chapterhtml = '';
 
             if ($scope.$chapterinfo.ty==1 || $scope.$chapterinfo==3) {
               $scope.getqnmd($scope.$chapterinfo.markdownurl);
@@ -175,12 +176,32 @@ angular.module('muggleApp')
           $CourseService.learnchapter({}, data);
         }
 
+        //章节内容浏览
+        $scope.chapterview = function (e, courseid, chapterid) {
+          var $this = $(e.target);
+
+          if (!courseid || !chapterid) return false;
+
+          //menu菜单更新
+          $('#menubox a').each(function () {
+            if ($(this).hasClass('active')) $(this).removeClass('active').addClass('learned');
+          });
+          $this.addClass('active');
+
+          $scope.courseid = courseid;
+          $scope.chapterid = chapterid;
+
+          //获取章节信息
+          $scope.getChapterInfo();
+        }
+
         //获取课程信息
         $scope.getCourseInfo();
 
         //监听 - getcourseview.success
         $scope.$on('getcourseview.success', function (event, d) {
           $scope.$courseview = BaseCtrl.apiResult($CourseService.courseview);
+          $scope.menuScroll();
 
           //遍历课程的章节信息
           var ai = 1;
