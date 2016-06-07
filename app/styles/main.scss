@@ -172,13 +172,15 @@ body {
 
   .contenter {
     top: 85px;
-    bottom: 50px;
+    bottom: 0px;
     margin-top: 0;
   }
 
   .footer {
+    position: absolute;
     height: 50px;
     padding-top: 15px;
     bottom: 0;
+    margin-bottom: -50px;
   }
 }

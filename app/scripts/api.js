@@ -7,6 +7,7 @@ var Api = {
   //host地址
   host: 'http://192.168.10.17/api/',
   // host: 'http://192.168.10.107:8000/api/',
+  default_courseid: '5746c7776dde6d1d18b35eee',
   //user
   user: {
     //login

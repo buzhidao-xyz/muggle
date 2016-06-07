@@ -1,0 +1,22 @@
+<h2 class="title">
+	<img src="images/web/icon_colspan_list.png" class="colspan" ng-click="menuExpand($event)">
+	<span>{{$chapterinfo.title}}</span>
+	<img src="images/wap/@1x/xiala@1x.png" class="xiala img-responsive" ng-click="menuToggle($event)">
+</h2>
+<div id="cview" class="content col-xs-12">
+	<div id="mdview" class="contentview mdview col-xs-12" ng-bind-html="$chapterinfo.markdowncontent" ng-if="($chapterinfo.ty==1)||($chapterinfo.ty==3)">
+	</div>
+	<div id="videoview" class="contentview videoview col-xs-12" ng-if="$chapterinfo.ty==2">
+	</div>
+</div>
+<div class="faq" ng-if="$chapterinfo.ty==2">
+	<div class="col-xs-12">
+		<!-- <h4><span class="icon"></span><span class="title">常见问题</span></h4>
+		<ul class="list-unstyled">
+			<li><a href="javascript:;">这节课主要讲了什么？</a></li>
+			<li><a href="javascript:;" class="active">我的路径怎么看？</a></li>
+			<li><a href="javascript:;">找不到标签怎么办？</a></li>
+			<li><a href="javascript:;">为什么使用lxml？</a></li>
+		</ul> -->
+	</div>
+</div>

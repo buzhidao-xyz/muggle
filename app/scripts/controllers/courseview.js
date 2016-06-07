@@ -45,9 +45,13 @@ angular.module('muggleApp')
           if (menuObj.css("display") == "block") {
             menuObj.hide();
             viewObj.removeClass('col-lg-9').addClass('col-lg-12');
+
+            if ('videoid' in $scope.$chapterinfo) $(".videoview object").css({"height": "639px"});
           } else {
             menuObj.show();
             viewObj.removeClass('col-lg-12').addClass('col-lg-9');
+
+            if ('videoid' in $scope.$chapterinfo) $(".videoview object").css({"height": "470px"});
           }
         }
 
@@ -75,8 +79,8 @@ angular.module('muggleApp')
           }
         }
 
-        //view滚动条模拟
-        $scope.viewScroll = function () {
+        //menu滚动条模拟
+        $scope.menuScroll = function () {
           setTimeout(function () {
             $("#menubox").mCustomScrollbar({
               axis: "y",
@@ -85,7 +89,12 @@ angular.module('muggleApp')
               mouseWheel:{ scrollAmount: 650 },
               scrollButtons:{ scrollAmount: 650 }
             });
+          }, 100);
+        }
 
+        //view滚动条模拟
+        $scope.viewScroll = function () {
+          setTimeout(function () {
             $("#cview").mCustomScrollbar({
               axis: "y",
               theme: "minimal-dark",
@@ -94,6 +103,20 @@ angular.module('muggleApp')
               scrollButtons:{ scrollAmount: 650 }
             });
           }, 100);
+        }
+
+        //课程视频初始化
+        $scope.polyvInit = function (vid, w, h) {
+          if (!vid) return false;
+
+          var w = w ? w : '100%';
+          var h = h ? h : '0';
+          var player = polyvObject('#videoview').videoPlayer({
+            'width': w,
+            'height': h,
+            'vid' : vid,
+            'flashParams':{'wmode':'window','setScreen':'100','allowScriptAccess':'always','allowFullScreen':'true'}
+          });
         }
 
         //获取课程信息
@@ -127,18 +150,17 @@ angular.module('muggleApp')
           //监听 - getchapterinfo.success
           $scope.$on('getchapterinfo.success', function (event, d) {
             $scope.$chapterinfo = BaseCtrl.apiResult($CourseService.chapterinfo);
+            $scope.menuScroll();
 
             if ($scope.$chapterinfo.ty==1 || $scope.$chapterinfo==3) {
               $scope.getqnmd($scope.$chapterinfo.markdownurl);
             } else if ($scope.$chapterinfo.ty==2) {
               //课程视频初始化
-              var vid = $scope.$chapterinfo.videoid;
-              var player = polyvObject('#videoview').videoPlayer({
-                'width':'100%',
-                'height':'0',
-                'vid' : vid,
-                'flashParams':{'wmode':'window','setScreen':'100','allowScriptAccess':'always','allowFullScreen':'true'}
-              });
+              if (window.innerWidth >= 1200) {
+                $scope.polyvInit($scope.$chapterinfo.videoid, '100%', '470');
+              } else {
+                $scope.polyvInit($scope.$chapterinfo.videoid, '100%', '0');
+              }
             }
           });
         }
@@ -150,7 +172,6 @@ angular.module('muggleApp')
             chapterid: $scope.chapterid
           }
           var data = BaseCtrl.apiRequestData(data);
-          console.log(data);
           $CourseService.learnchapter({}, data);
         }
 
@@ -192,6 +213,12 @@ angular.module('muggleApp')
 
           //章节ID
           $scope.chapterid = $scope.chapterid ? $scope.chapterid : $scope.$chapterinfo.chapterid;
+
+          //页面location
+          if ($rootScope.path !== '/courseview/courseid/:courseid/chapterid/:chapterid') {
+            $location.path('/courseview/courseid/'+$scope.courseid+'/chapterid/'+$scope.chapterid);
+            return false;
+          }
 
           //获取课程-章节信息
           $scope.getChapterInfo();

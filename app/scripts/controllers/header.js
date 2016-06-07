@@ -33,7 +33,7 @@ angular.module('muggleApp')
           BaseCtrl.ususerinfo();
 
            $location.path('/login');
-          location.reload();
+          // location.reload();
         }
       }
       $scope.doLogout();
