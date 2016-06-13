@@ -2,20 +2,13 @@
 	display: block;
 	overflow: hidden;
 	height: 100%;
-	background: #2b2f3e;
+	// background: #2b2f3e;
 
 	.menu {
 		color: #FFFFFF;
 		height: 100%;
-		padding-left: 0;
-		padding-right: 0;
 		display: block;
-
-		.menubox {
-			display: block;
-			height: 100%;
-			overflow: hidden;
-		}
+		background: #2b2f3e;
 
 		h3, h4, h5 {
 			margin: 0;
@@ -31,7 +24,7 @@
 			}
 		}
 		a {
-			color: #82848a;
+			color: #9fa1a8;
 			text-decoration: none;
 			word-spacing: 3px;
 
@@ -47,11 +40,17 @@
 			}
 		}
 		a.active {
-			color: #7edcee;
+			color: #77c4d3;
 
 			&:hover {
-				color: #7edcee;
+				color: #77c4d3;
 			}
+		}
+
+		.menubox {
+			display: block;
+			height: 100%;
+			overflow: hidden;
 		}
 
 		.zhangbox {
@@ -63,9 +62,12 @@
 
 				&:hover {
 					color: #FFFFFF;
-					background: #7edcee;
+					background: #77c4d3;
 
 					a {
+						color: #82848a;
+					}
+					a.learned {
 						color: #F1F1F1;
 					}
 				}
@@ -92,7 +94,7 @@
 					    display: block;
 					    content: " ";
 					    font-size: 14px;
-						background: #7edcee;
+						background: #77c4d3;
 					    width: 8px;
 					    height: 8px;
 					    float: left;
@@ -144,7 +146,7 @@
 		}
 		.zhangbox.expand {
 			background: url("../images/web/course_menu_expand_bg.png") repeat-y left #373c4e;
-			border-top: 1px solid #747474;
+			// border-top: 1px solid transparent;
 
 			.jiebox {
 				display: block;
@@ -234,8 +236,6 @@
 			span {
 				display: block;
 				float: left;
-				height: 24px;
-				line-height: 24px;
 				margin-left: 0px;
 			}
 		}
@@ -264,9 +264,7 @@
 		}
 
 		.faq {
-			margin-left: 30px;
-			margin-top: 10px;
-			margin-bottom: 10px;
+			margin: 10px 30px;
 			background: #FFFFFF;
 			border-radius: 5px;
 			padding-top: 20px;
@@ -284,7 +282,7 @@
 					width: 8px;
 					height: 8px;
 					display: block;
-					background: #7edcee;
+					background: #77c4d3;
 					border-radius: 4px;
 					margin-top: 3px;
 				}
@@ -306,15 +304,15 @@
 						font-size: 13px;
 
 						&:hover, &:focus {
-							color: #7edcee;
+							color: #77c4d3;
 						}
 					}
 					a.active {
-						color: #7edcee;
+						color: #77c4d3;
 						text-decoration: underline;
 
 						&:hover, &:focus {
-							color: #7edcee;
+							color: #77c4d3;
 						}
 					}
 				}
@@ -327,6 +325,7 @@
 	.courseview {
 		.menu {
 			display: none;
+			width: 100%;
 
 			h3.title {
 				padding: 25px 0 25px 11px;
@@ -334,6 +333,8 @@
 		}
 
 		.view {
+			width: 100%;
+
 			h2.title {
 				font-size: 20px;
 				padding: 13px 30px 13px 30px;
@@ -371,28 +372,38 @@
 	.courseview {
 		.menu {
 			display: block;
-
-			.menubox {
-				padding-bottom: 100px;
-			}
+			position: fixed;
+			width: 300px;
 
 			h3.title {
-				padding: 45px 0 35px 11px;
+				width: 300px;
+				padding: 30px 0 26px 11px;
+			}
+
+			.menubox {
+				width: 300px;
+				padding-bottom: 100px;
 			}
 		}
 
 		.view {
-			padding-bottom: 100px;
+			padding-bottom: 0px;
+			float: right;
+			width: 900px;
 
 			h2.title {
 				font-size: 24px;
-				padding: 38px 30px 38px 30px;
+				padding: 27px 30px 23px 30px;
 
 				img.colspan {
 					display: block;
 				}
 				img.xiala {
 					display: none;
+				}
+
+				span {
+					margin-top: -2px;
 				}
 			}
 
@@ -410,6 +421,7 @@
 
 				.videoview {
 					padding-top: 30px;
+					padding-right: 30px;
 				}
 
 				.mdview {
@@ -419,6 +431,33 @@
 
 			.faq {
 				display: block;
+			}
+		}
+	}
+}
+@media (min-width: 1441px) {
+	.courseview {
+		.menu {
+			h3.title {
+				padding: 45px 0 36px 11px;
+			}
+		}
+
+		.view {
+			h2.title {
+				font-size: 26px;
+				padding: 40px 30px 35px 30px;
+
+				img.colspan {
+					display: block;
+				}
+				img.xiala {
+					display: none;
+				}
+
+				span {
+					margin-top: -4px;
+				}
 			}
 		}
 	}

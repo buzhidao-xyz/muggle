@@ -35,8 +35,14 @@ angular
       }
     }
   }])
-  .config(function ($routeProvider, $httpProvider) {
+  .config(function ($routeProvider, $httpProvider, $locationProvider) {
     $routeProvider
+      .when('/', {
+        templateUrl: 'views/main.html',
+        controller: 'MainCtrl',
+        controllerAs: 'main',
+        cklogon: true
+      })
       .when('/main', {
         templateUrl: 'views/main.html',
         controller: 'MainCtrl',
@@ -83,6 +89,7 @@ angular
         templateUrl: 'views/courseview.html',
         controller: 'CourseViewCtrl',
         controllerAs: 'courseview',
+        reloadOnSearch: false,
         cklogon: true
       })
       .when('/courseview/courseid/:courseid/token/:token',{
@@ -96,6 +103,8 @@ angular
       });
 
     $httpProvider.interceptors.push('UserInterceptor');
+
+    // $locationProvider.html5Mode(true);
   }).run(['$rootScope', '$window', '$location', '$log', function ($rootScope, $window, $location, $log) {
     //监听事件 - 路由切换开始
     $rootScope.$on('$routeChangeStart', function (){

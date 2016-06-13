@@ -1,6 +1,6 @@
-$navacolor: #f3adb3;
+$navacolor: #FFFFFF;
 $navahover: #FFFFFF;
-$navasize: 19px;
+$navasize: 18px;
 
 @mixin nav-a-p {
 	padding-left: 20px;
@@ -29,7 +29,7 @@ $navasize: 19px;
 		height: 70px;
 		padding: 25px 25px;
 		margin-left: 0;
-		color: #E1E1E1;
+		color: rgba(255,255,255,0.5);
 		font-size: $navasize;
 
 		&:hover, &:focus {
@@ -126,5 +126,29 @@ $coursecolor: #666;
 	.course img.courseimg {
 		width: 520px;
 		height: 390px;
+	}
+}
+
+@media (min-width: 1200px) {
+	.navbar-default {
+		a {
+			margin-top: 5px;
+		}
+	}
+	.navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand {
+		height: auto;
+		line-height: 20px;
+	}
+}
+
+@media (min-width: 1441px) {
+	.navbar-default {
+		a {
+			margin-top: 15px;
+		}
+	}
+	.navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand {
+		height: auto;
+		line-height: 20px;
 	}
 }

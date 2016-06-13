@@ -1,7 +1,7 @@
 <script src='//player.polyv.net/script/polyvplayer.min.js'></script>
 <script src="plugins/malihu-custom-scrollbar-plugin-3.1.3/jquery.mCustomScrollbar.concat.min.js"></script>
 <div class="courseview">
-	<div id="menu" class="menu col-lg-3 col-sm-12">
+	<div id="menu" class="menu">
 		<h3 class="title" ng-cloak class="ng-cloak">
 			<a href="javascript:;"><img src="images/web/icon_arrow_left.png" class="img-responsive navlink"></a>
 			<span>{{$courseview.title}}</span>
@@ -11,15 +11,15 @@
 				<h4 ng-click="zhangExpand($event)"><a href="javascript:;" class="learned">{{$zhanginfo.title}}</a></h4>
 				<div class="jiebox">
 					<h5 class="{{$jieinfo.classn}}" ng-repeat="$jieinfo in $courseview.chapterIIs[$zhanginfo.chapterid]">
-						<a href="#/courseview/courseid/{{courseid}}/chapterid/{{$jieinfo.chapterid}}" class="" ng-if="($jieinfo.chapterid!=chapterid) && (!$jieinfo.study || $jieinfo.study==0)">{{$jieinfo.title}}</a>
-						<a href="#/courseview/courseid/{{courseid}}/chapterid/{{$jieinfo.chapterid}}" class="learned" ng-if="($jieinfo.chapterid!=chapterid) && ($jieinfo.study==1)">{{$jieinfo.title}}</a>
-						<a href="#/courseview/courseid/{{courseid}}/chapterid/{{$jieinfo.chapterid}}" class="active" ng-if="$jieinfo.chapterid==chapterid">{{$jieinfo.title}}</a>
+						<a href="javascript:;" ng-click="chapterview($event, courseid, $jieinfo.chapterid)" class="" ng-if="($jieinfo.chapterid!=chapterid) && (!$jieinfo.study || $jieinfo.study==0)">{{$jieinfo.title}}</a>
+						<a href="javascript:;" ng-click="chapterview($event, courseid, $jieinfo.chapterid)" class="learned" ng-if="($jieinfo.chapterid!=chapterid) && ($jieinfo.study==1)">{{$jieinfo.title}}</a>
+						<a href="javascript:;" ng-click="chapterview($event, courseid, $jieinfo.chapterid)" class="active" ng-if="$jieinfo.chapterid==chapterid">{{$jieinfo.title}}</a>
 					</h5>
 				</div>
 			</div>
 		</div>
 	</div>
-	<div id="view" class="view col-lg-9 col-sm-12">
+	<div id="view" class="view">
 		<h2 class="title">
 			<img src="images/web/icon_colspan_list.png" class="colspan" ng-click="menuExpand($event)">
 			<span>{{$chapterinfo.title}}</span>
@@ -48,12 +48,32 @@
 @media screen and (min-width: 1200px) {
 	.contenter {
       background: url("images/web/contenter_bg_top.png") repeat-x #EEEEEE;
-      background-size: 100% 100px;
-      overflow: hidden;
+      background-size: 100% 184px;
+      min-height: 100%;
 	}
 	.contenter .container {
       background: #EEEEEE;
-      height: 100%;
 	}
 }
 </style>
+<script type="text/javascript">
+$(function () {
+	var htop = parseInt($(".header").height());
+	$(window).scroll(function(event) {
+		var wstop = parseInt($(window).scrollTop());
+		if (wstop <= 15) {
+			$("#menu").css({
+				top: htop+"px"
+			});
+		} else if (wstop <= htop) {
+			$("#menu").css({
+				top: (htop-wstop) + "px"
+			});
+		} else {
+			$("#menu").css({
+				top: "0px"
+			});
+		}
+	});
+})
+</script>

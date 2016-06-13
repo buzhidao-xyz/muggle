@@ -44,6 +44,8 @@ angular.module('muggleApp')
           $scope.$userinfo = BaseCtrl.apiResult($UserService.userinfo);
           //记录用户信息-cookie
           BaseCtrl.gsuserinfo($scope.$userinfo);
+
+          $scope.GSChapterid(Api.default_courseid, '', 1);
           $location.path('/courseview/courseid/' + Api.default_courseid);
         });
       }

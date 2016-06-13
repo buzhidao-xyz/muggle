@@ -111,11 +111,32 @@ angular.module('muggleApp')
         }
       }
 
+      //存取章节ID 1天有效期
+      $scope.GSChapterid = function ($courseid, $chapterid, $remove) {
+        if (!$courseid) return false;
+        var $ckey = 'courseview_'+$courseid;
+
+        if ($remove) $cookies.remove($ckey);
+
+        if ($chapterid) {
+          var expireDate = new Date();  
+          expireDate.setDate(expireDate.getDate() + 1);
+          $cookies.putObject($ckey, $chapterid, {
+            'expires': expireDate.toUTCString()
+          });
+        } else {
+          $chapterid = $cookies.getObject($ckey);
+
+          return $chapterid;
+        }
+      }
+
       return {
         alertShow: $scope.alertShow,
         gsuserinfo: $scope.gsuserinfo,
         ususerinfo: $scope.ususerinfo,
         apiRequestData: $scope.apiRequestData,
-        apiResult: $scope.apiResult
+        apiResult: $scope.apiResult,
+        GSChapterid: $scope.GSChapterid
       }
     }]);
