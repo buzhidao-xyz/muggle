@@ -7,7 +7,7 @@
 			<span>{{$courseview.title}}</span>
 		</h3>
 		<div id="menubox" class="menubox">
-			<div class="zhangbox expand {{$zhanginfo.expandclass}}" ng-repeat="$zhanginfo in $courseview.chapterIs">
+			<div class="zhangbox {{$zhanginfo.expandclass}}" ng-repeat="$zhanginfo in $courseview.chapterIs">
 				<h4 ng-click="zhangExpand($event)"><a href="javascript:;" class="learned">{{$zhanginfo.title}}</a></h4>
 				<div class="jiebox">
 					<h5 class="{{$jieinfo.classn}}" ng-repeat="$jieinfo in $courseview.chapterIIs[$zhanginfo.chapterid]">
