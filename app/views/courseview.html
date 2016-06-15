@@ -7,7 +7,7 @@
 			<span>{{$courseview.title}}</span>
 		</h3>
 		<div id="menubox" class="menubox">
-			<div class="zhangbox {{$zhanginfo.expandclass}}" ng-repeat="$zhanginfo in $courseview.chapterIs">
+			<div class="zhangbox expand {{$zhanginfo.expandclass}}" ng-repeat="$zhanginfo in $courseview.chapterIs">
 				<h4 ng-click="zhangExpand($event)"><a href="javascript:;" class="learned">{{$zhanginfo.title}}</a></h4>
 				<div class="jiebox">
 					<h5 class="{{$jieinfo.classn}}" ng-repeat="$jieinfo in $courseview.chapterIIs[$zhanginfo.chapterid]">
@@ -48,11 +48,16 @@
 @media screen and (min-width: 1200px) {
 	.contenter {
       background: url("images/web/contenter_bg_top.png") repeat-x #EEEEEE;
-      background-size: 100% 184px;
+      background-size: 100% 137px;
       min-height: 100%;
 	}
 	.contenter .container {
       background: #EEEEEE;
+	}
+}
+@media screen and (min-width: 1441px) {
+	.contenter {
+      background-size: 100% 184px;
 	}
 }
 </style>
@@ -61,7 +66,7 @@ $(function () {
 	var htop = parseInt($(".header").height());
 	$(window).scroll(function(event) {
 		var wstop = parseInt($(window).scrollTop());
-		if (wstop <= 15) {
+		if (wstop <= 10) {
 			$("#menu").css({
 				top: htop+"px"
 			});

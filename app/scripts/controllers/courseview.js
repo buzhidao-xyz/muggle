@@ -103,7 +103,8 @@ angular.module('muggleApp')
               scrollInertia: 0,
               scrollSpeed: 200,
               scrollAmount: 25,
-              mouseWheelPixels: 25
+              mouseWheelPixels: 25,
+              mouseWheel:{ preventDefault: true }
             });
           }, 100);
         }
