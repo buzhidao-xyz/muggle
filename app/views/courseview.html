@@ -64,20 +64,33 @@
 <script type="text/javascript">
 $(function () {
 	var htop = parseInt($(".header").height());
+	var mpb = parseInt($("#menubox").css("padding-bottom"));
 	$(window).scroll(function(event) {
 		var wstop = parseInt($(window).scrollTop());
 		if (wstop <= 10) {
 			$("#menu").css({
 				top: htop+"px"
 			});
+			$("#menubox").css({
+				"padding-bottom": mpb+"px"
+			});
+			$("#menubox").mCustomScrollbar("update");
 		} else if (wstop <= htop) {
 			$("#menu").css({
 				top: (htop-wstop) + "px"
 			});
+			$("#menubox").css({
+				"padding-bottom": (mpb-wstop)+"px"
+			});
+			$("#menubox").mCustomScrollbar("update");
 		} else {
 			$("#menu").css({
 				top: "0px"
 			});
+			$("#menubox").css({
+				"padding-bottom": (mpb-htop)+"px"
+			});
+			$("#menubox").mCustomScrollbar("update");
 		}
 	});
 })
