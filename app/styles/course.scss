@@ -20,7 +20,15 @@
 			
 			.navlink {
 				float: left;
-				margin-top: -14px;
+				margin-top: 2px;
+			}
+
+			span {
+				width: 220px;
+			    height: 48px;
+			    overflow: hidden;
+			    line-height: 48px;
+			    display: inline-block;
 			}
 		}
 		a {
@@ -29,14 +37,14 @@
 			word-spacing: 3px;
 
 			&:hover {
-				color: #E1E1E1;
+				color: #FFFFFF;
 			}
 		}
 		a.learned {
-			color: #E1E1E1;
+			color: #FFFFFF;
 
 			&:hover {
-				color: #F1F1F1;
+				color: #FFFFFF;
 			}
 		}
 		a.active {
@@ -60,6 +68,13 @@
 				padding-bottom: 27px;
 				cursor: pointer;
 
+				a {
+					color: #82848a;
+				}
+				a.learned {
+					color: #FFFFFF;
+				}
+
 				&:hover {
 					color: #FFFFFF;
 					background: #77c4d3;
@@ -68,7 +83,7 @@
 						color: #82848a;
 					}
 					a.learned {
-						color: #F1F1F1;
+						color: #FFFFFF;
 					}
 				}
 			}
@@ -329,7 +344,7 @@
 			width: 100%;
 
 			h3.title {
-				padding: 25px 0 25px 11px;
+				padding: 15px 0 15px 10px;
 			}
 		}
 
@@ -379,12 +394,28 @@
 
 			h3.title {
 				width: 300px;
-				padding: 30px 0 26px 11px;
+				padding: 15px 0 9px 11px;
 			}
 
 			.menubox {
 				width: 300px;
 				padding-bottom: 138px;
+			}
+
+			.zhangbox {
+				.jiebox {
+					h5 {
+						a {
+							span {
+								display: inline-block;
+								height: 14px;
+								line-height: 14px;
+								overflow: hidden;
+								width: 215px;
+							}
+						}
+					}
+				}
 			}
 		}
 
@@ -443,7 +474,7 @@
 			top: 85px;
 
 			h3.title {
-				padding: 45px 0 36px 11px;
+				padding: 30px 0 19px 11px;
 			}
 
 			.menubox {

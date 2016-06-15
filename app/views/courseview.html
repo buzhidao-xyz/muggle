@@ -11,9 +11,9 @@
 				<h4 ng-click="zhangExpand($event)"><a href="javascript:;" class="learned">{{$zhanginfo.title}}</a></h4>
 				<div class="jiebox">
 					<h5 class="{{$jieinfo.classn}}" ng-repeat="$jieinfo in $courseview.chapterIIs[$zhanginfo.chapterid]">
-						<a href="javascript:;" ng-click="chapterview($event, courseid, $jieinfo.chapterid)" class="" ng-if="($jieinfo.chapterid!=chapterid) && (!$jieinfo.study || $jieinfo.study==0)">{{$jieinfo.title}}</a>
-						<a href="javascript:;" ng-click="chapterview($event, courseid, $jieinfo.chapterid)" class="learned" ng-if="($jieinfo.chapterid!=chapterid) && ($jieinfo.study==1)">{{$jieinfo.title}}</a>
-						<a href="javascript:;" ng-click="chapterview($event, courseid, $jieinfo.chapterid)" class="active" ng-if="$jieinfo.chapterid==chapterid">{{$jieinfo.title}}</a>
+						<a href="javascript:;" ng-click="chapterview($event, courseid, $jieinfo.chapterid)" class="" ng-if="($jieinfo.chapterid!=chapterid) && (!$jieinfo.study || $jieinfo.study==0)"><span>{{$jieinfo.title}}</span></a>
+						<a href="javascript:;" ng-click="chapterview($event, courseid, $jieinfo.chapterid)" class="learned" ng-if="($jieinfo.chapterid!=chapterid) && ($jieinfo.study==1)"><span>{{$jieinfo.title}}</span></a>
+						<a href="javascript:;" ng-click="chapterview($event, courseid, $jieinfo.chapterid)" class="active" ng-if="$jieinfo.chapterid==chapterid"><span>{{$jieinfo.title}}</span></a>
 					</h5>
 				</div>
 			</div>
