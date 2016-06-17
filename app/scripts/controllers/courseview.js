@@ -72,14 +72,11 @@ angular.module('muggleApp')
         //章节菜单栏上下-收起/展开
         $scope.menuToggle = function (e) {
           var menuObj = $('#menu');
-          var viewObj = $('#view');
 
           if (menuObj.css("display") == "block") {
             menuObj.slideUp();
-            viewObj.removeClass('col-lg-9').addClass('col-lg-12');
           } else {
             menuObj.slideDown();
-            viewObj.removeClass('col-lg-12').addClass('col-lg-9');
           }
         }
 
@@ -127,6 +124,7 @@ angular.module('muggleApp')
         //课程视频初始化
         $scope.polyvInit = function (vid, w, h) {
           if (!vid) return false;
+          $('#videoview').html(null);
 
           var w = w ? w : '100%';
           var h = h ? h : '0';
@@ -195,6 +193,10 @@ angular.module('muggleApp')
           $scope.GSChapterid(courseid, chapterid);
           $scope.courseid = courseid;
           $scope.chapterid = chapterid;
+
+          if (window.innerWidth < 1200) {
+            $scope.menuToggle();
+          }
 
           $scope.getCourseInfo();
         }
