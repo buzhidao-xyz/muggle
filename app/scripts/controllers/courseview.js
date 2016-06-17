@@ -231,6 +231,8 @@ angular.module('muggleApp')
             for (var j in $scope.$courseview.chapterIIs[chapterIid]) {
               if ($scope.chapterid==$scope.$courseview.chapterIIs[chapterIid][j].chapterid || (!$scope.chapterid && ai==1 && i==1)) {
                 $scope.$courseview.chapterIs[k].expandclass = "expand";
+
+                if (!$scope.chapterid) $scope.chapterid = $scope.$courseview.chapterIIs[chapterIid][j].chapterid;
               }
 
               var classn = "";
@@ -247,10 +249,7 @@ angular.module('muggleApp')
           }
 
           //章节ID
-          if (!$scope.chapterid) {
-            $scope.chapterid = $scope.$chapterinfo.chapterid;
-            $scope.GSChapterid($scope.courseid, $scope.$chapterinfo.chapterid);
-          }
+          $scope.GSChapterid($scope.courseid, $scope.chapterid);
 
           //页面location
           // if ($rootScope.path !== '/courseview/courseid/:courseid/chapterid/:chapterid') {
