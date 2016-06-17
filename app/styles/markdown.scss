@@ -1,0 +1,191 @@
+.courseview {
+  .view {
+    .content {
+      .mdview {
+        color: #333333;
+        letter-spacing: 0;
+        font-family: 'Microsoft YaHei Light','Hiragino Sans GB',Helvetica,Arial,'Lucida Grande',sans-serif;
+        
+        * {
+          color: #333333;
+          font-size: 16px;
+          line-height: 19.2px;
+          color-profile: sRGB;
+          margin-top: 15px;
+        }
+        h1,h2,h3,h4,h5,h6,p,blockquote,ol,ul,li,img {
+          margin: 0;
+          padding: 0;
+          font-size: 100%;
+          font: inherit;
+          vertical-align: baseline;
+          margin-left: 24px;
+        }
+        p {
+          font-weight: lighter;
+          margin-bottom: 5px;
+          font-size: 16px;
+        }
+        strong {
+          font-weight: bold;
+        }
+        ul ul, ol ol, ul ol, ol ul {
+          margin-top: 10px;
+        }
+        ol, ul {
+          margin-top: 30px;
+          margin-left: 2em;
+          margin-bottom: 20px;
+        }
+        ol li, ul li {
+          font-size: 16px;
+          margin-bottom: 12px;
+          line-height: 30px;
+        }
+        ol {
+          margin-left: 20px;
+        }
+        ol li {
+          font-size: 18px;
+        }
+        ul {
+          list-style: none;
+          margin-left: 0px;
+        }
+        ul li:before {
+          content: " ";
+          background: #7EDCEE;
+          display: inline-block;
+          width: 8px;
+          height: 8px;
+          border-radius: 4px;
+          margin-right: 15px;
+        }
+        ul li {
+          margin-left: 0;
+        }
+        h1, h2, h3, h4, h5, h6 {
+          font-weight: lighter;
+          text-transform: capitalize;
+          margin-left: 0px;
+          margin-top: 30px;
+          margin-bottom: 20px;
+        }
+        h1 {
+          font-size: 24.624px;
+          line-height: 29.548799999999996px;
+        }
+        h2 {
+          font-size: 24.624px;
+          line-height: 29.548799999999996px;
+        }
+        h3 {
+          font-size: 23.44px;
+          line-height: 28.128px;
+        }
+        h4 {
+          font-size: 22.16px;
+          line-height: 26.592px;
+        }
+        h5 {
+          font-size: 22.16px;
+          line-height: 26.592px;
+        }
+        h6 {
+          font-size: 22.16px;
+          line-height: 26.592px;
+        }
+        img {
+          margin-top: 20px;
+          margin-bottom: 20px;
+        }
+        h1 img, h2 img, h3 img, h4 img, h5 img, h6 img, p img {
+          margin-bottom: 0;
+        }
+        pre {
+          margin-bottom: 20px;
+        }
+        pre, code {
+          font-family: monospace;
+        }
+        pre {
+          white-space: pre;
+          white-space: pre-wrap;
+          word-wrap: break-word;
+          padding: 15px;
+        }
+        code {
+          color: #FFFFFF;
+          background: #333333;
+          padding: 20px;
+          font-size: 17px;
+          font-weight: 500;
+          display: inline-block;
+          width: 97%;
+          letter-spacing: 1px;
+          border-radius: 0;
+          word-wrap: break-word;
+          font-family: "Helvetica Neue",Arial,"Hiragino Sans GB","STHeiti","Microsoft YaHei","WenQuanYi Micro Hei",SimSun,Song,sans-serif;
+        }
+        blockquote {
+          border-left: 8px solid #eeeeee;
+          padding: 0 15px;
+          margin-top: 30px;
+        }
+        blockquote > :first-child {
+          margin-top: 0;
+        }
+        blockquote > :last-child {
+          margin-bottom: 15px;
+        }
+        blockquote p {
+          margin-left: 0;
+          line-height: 25px;
+        }
+        pre {
+          color: #586e75;
+          background-color: #eee8d5;
+        }
+        a, a:active, a:visited, code.url {
+          color: #7EDCEE;
+          text-decoration: underline;
+        }
+        a:hover {
+          background-color: #F1F1F1;
+        }
+        p {
+          
+        }
+
+        ul:first-child, ol:first-child, blockquote:first-child, h1:first-child, h2:first-child {
+          margin-top: 10px;
+        }
+
+        @media print {
+          body {
+            margin: 0;
+          }
+          * {
+            color: #000 !important;
+          }
+        }
+      }
+      
+      @media screen and (min-width: 320px) {
+        .mdview {
+          padding-left: 5px;
+          padding-right: 5px;
+        }
+      }
+
+      @media screen and (min-width: 1200px) {
+        .mdview {
+          margin-top: 30px;
+          border-radius: 5px;
+          padding-left: 20px;
+          padding-right: 10px;
+        }
+      }
+    }
+  }
+}

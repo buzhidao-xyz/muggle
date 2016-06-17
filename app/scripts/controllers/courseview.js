@@ -161,6 +161,9 @@ angular.module('muggleApp')
         $scope.$on('getchapterinfo.success', function (event, d) {
           $scope.$chapterinfo = BaseCtrl.apiResult($CourseService.chapterinfo);
 
+          //上报已学习状态
+          $scope.learnChapter();
+
           if ($scope.$chapterinfo.ty==1 || $scope.$chapterinfo==3) {
             $scope.getqnmd($scope.$chapterinfo.markdownurl);
           } else if ($scope.$chapterinfo.ty==2) {
@@ -190,24 +193,10 @@ angular.module('muggleApp')
           if (!courseid || !chapterid) return false;
 
           $scope.GSChapterid(courseid, chapterid);
-
-          //path更新
-          // $location.search('courseid', courseid);
-          // $location.search('chapterid', chapterid);
-
-          //menu菜单更新
-          $('#menubox a').each(function () {
-            if ($(this).hasClass('active')) $(this).removeClass('active').addClass('learned');
-          });
-          $this.addClass('active');
-
           $scope.courseid = courseid;
           $scope.chapterid = chapterid;
 
-          //获取章节信息
-          $scope.getChapterInfo();
-
-          return false;
+          $scope.getCourseInfo();
         }
 
         //获取课程信息
@@ -233,14 +222,14 @@ angular.module('muggleApp')
 
             $scope.$courseview.chapterIs[k].expandclass = "";
 
+            $scope.$courseview.chapterIs[k].zhangaclass = "learned";
+
             //遍历节信息
             var i = 1;
             for (var j in $scope.$courseview.chapterIIs[chapterIid]) {
-              if ((!$scope.chapterid && ai==1 && i==1) || ($scope.chapterid && $scope.$courseview.chapterIIs[chapterIid][j].chapterid==$scope.chapterid)) {
-                $scope.$chapterinfo = $scope.$courseview.chapterIIs[chapterIid][j];
+              if ($scope.chapterid==$scope.$courseview.chapterIIs[chapterIid][j].chapterid || (!$scope.chapterid && ai==1 && i==1)) {
+                $scope.$courseview.chapterIs[k].expandclass = "expand";
               }
-
-              if ($scope.$chapterinfo.chapterid==$scope.$courseview.chapterIIs[chapterIid][j].chapterid) $scope.$courseview.chapterIs[k].expandclass = "expand";
 
               var classn = "";
               if (i==1) classn = "first";
@@ -248,6 +237,8 @@ angular.module('muggleApp')
               if (lll==1) classn = "first last";
               $scope.$courseview.chapterIIs[chapterIid][j].classn = classn;
               i++;
+
+              if ($scope.$courseview.chapterIIs[chapterIid][j].study==0) $scope.$courseview.chapterIs[k].zhangaclass = "";
             }
 
             ai++;
@@ -267,9 +258,6 @@ angular.module('muggleApp')
 
           //获取课程-章节信息
           $scope.getChapterInfo();
-
-          //上报已学习状态
-          if ($scope.$chapterinfo.study==0) $scope.learnChapter();
         })
 
         $scope.getCourseInfo();

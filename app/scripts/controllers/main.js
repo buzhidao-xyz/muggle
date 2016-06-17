@@ -23,4 +23,6 @@ angular.module('muggleApp')
 
     //BaseCtrl
     var BaseCtrl = $controller('BaseCtrl', {$rootScope: $rootScope, $scope: $scope});
+
+    $location.path('/courseview/courseid/' + Api.default_courseid);
   }]);
