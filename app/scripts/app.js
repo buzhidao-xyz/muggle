@@ -41,13 +41,7 @@ angular
         templateUrl: 'views/main.html',
         controller: 'MainCtrl',
         controllerAs: 'main',
-        cklogon: true
-      })
-      .when('/main', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl',
-        controllerAs: 'main',
-        cklogon: true
+        cklogon: false
       })
       .when('/tutorial', {
         templateUrl: 'views/tutorial.html',
@@ -99,7 +93,7 @@ angular
         cklogon: true
       })
       .otherwise({
-        redirectTo: '/login'
+        redirectTo: '/'
       });
 
     $httpProvider.interceptors.push('UserInterceptor');

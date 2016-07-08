@@ -22,6 +22,8 @@ angular.module('muggleApp')
         'Karma'
       ];
 
+      $scope.Api = Api;
+
       //预定义变量
       $scope.errormsg = "网络错误 请求失败！";
 
@@ -129,6 +131,12 @@ angular.module('muggleApp')
 
           return $chapterid;
         }
+      }
+
+      //destroy fullpage
+      if ($('html').hasClass('fp-enabled')) { 
+        $("#fp-nav").html('');
+        $.fn.fullpage.destroy('all');
       }
 
       return {

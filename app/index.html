@@ -34,7 +34,7 @@
         </button> -->
         <img src="images/wap/@1x/caidan@1x.png" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
 
-        <a class="navbar-brand" href="javascript:;">麻瓜编程</a>
+        <a class="navbar-brand" href="#/main">麻瓜编程</a>
       </div>
 
       <div class="collapse navbar-collapse" id="js-navbar-collapse" ng-controller="HeaderCtrl">
@@ -42,7 +42,7 @@
         <ul class="nav navbar-nav">
           <!-- <li class="active"><a href="#/">Home</a></li> -->
           <!-- <li><a ng-href="#/tutorial">魔力教程</a></li> -->
-          <li><a ng-href="javascript:;">实战课程</a></li>
+          <li><a ng-href="#/courseview/courseid/{{Api.default_courseid}}">实战课程</a></li>
         </ul>
 
         <ul class="userc list-unstyled ng-cloak" ng-cloak ng-if="!$userinfo.id">
@@ -89,6 +89,10 @@
 <script src="bower_components/angular-touch/angular-touch.js"></script>
 <!-- endbower -->
 <!-- endbuild -->
+
+<link rel="stylesheet" href="plugins/fullPage.js-2.8.1/jquery.fullpage.min.css">
+<script src="plugins/fullPage.js-2.8.1/jquery-ui-1.9.1.min.js"></script>
+<script src="plugins/fullPage.js-2.8.1/jquery.fullPage.min.js"></script>
 
 <!-- build:js({.tmp,app}) scripts/scripts.js -->
 <script src="scripts/app.js"></script>

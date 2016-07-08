@@ -46,7 +46,8 @@ angular.module('muggleApp')
           BaseCtrl.gsuserinfo($scope.$userinfo);
 
           $scope.GSChapterid(Api.default_courseid, '', 1);
-          $location.path('/courseview/courseid/' + Api.default_courseid);
+          // $location.path('/courseview/courseid/' + Api.default_courseid);
+          $location.path('/');
         });
       }
       $scope.doLogin();

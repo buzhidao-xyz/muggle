@@ -1,4 +1,4 @@
-$navacolor: #FFFFFF;
+$navacolor: #F3AAB1;
 $navahover: #FFFFFF;
 $navasize: 18px;
 
@@ -17,7 +17,6 @@ $navasize: 18px;
 	a {
 		color: $navacolor;
 		font-size: $navasize;
-		font-weight: bold;
 		margin-left: 0;
 		@include nav-a-p;
 
@@ -29,11 +28,12 @@ $navasize: 18px;
 		height: 70px;
 		padding: 25px 25px;
 		margin-left: 0;
-		color: rgba(255,255,255,0.5);
+		// color: rgba(255,255,255,0.5);
+		color: #F3AAB1;
 		font-size: $navasize;
 
 		&:hover, &:focus {
-			color: #E1E1E1;
+			color: #FFFFFF;
 		}
 	}
 	.navbar-nav {
@@ -56,13 +56,13 @@ $navasize: 18px;
 
 }
 .userc li a, .userc li span {
-	color: #FFFFFF;
+	color: #F3AAB1;
 	display: block;
 	line-height: 20px;
 	padding: 10px 15px;
 }
 .userc li a.logout {
-	color: #f3adb3;
+	color: #F3AAB1;
 	font-size: 15px;
 }
 
