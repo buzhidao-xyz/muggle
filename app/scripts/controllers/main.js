@@ -77,9 +77,6 @@ angular.module('muggleApp')
 
           //第七屏
           if (index == 7) {
-            $("#CourseContainer").css({
-
-            });
           }
         },
 
@@ -94,6 +91,12 @@ angular.module('muggleApp')
           .toggleClass('moveUp', index >= 2 && direction == 'up');
 
         }
+      });
+      $("#fp-nav ul li").each(function () {
+        if ($(this).index()>7) $(this).remove();
+      });
+      $("#fp-nav").css({
+        "margin-top": "-73.5px"
       });
     }();
   }]);
