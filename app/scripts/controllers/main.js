@@ -93,7 +93,7 @@ angular.module('muggleApp')
         }
       });
       $("#fp-nav ul li").each(function () {
-        if ($(this).index()>7) $(this).remove();
+        if ($(this).index()>=7) $(this).remove();
       });
       $("#fp-nav").css({
         "margin-top": "-73.5px"
