@@ -35,7 +35,13 @@ angular.module('muggleApp')
         'navigationTooltips': [],
 
         'afterLoad': function(anchorLink, index){
-          if (index==1) $("#fp-nav ul li a").attr('href', 'javascript:;');
+          if (index==1) {
+            $("#fp-nav ul li a").attr('href', 'javascript:;');
+            $("#CourseContainer .section .next").unbind('click');
+            $("#CourseContainer .section .next").click(function (){
+              $.fn.fullpage.moveSectionDown();
+            });
+          }
 
           var loadedSection = $(this);
 
