@@ -88,20 +88,20 @@ angular.module('muggleApp')
 
           //PYTHON文字滑动
           $('.pythonimgbox img.pythonimg_P, .pythonimgbox img.pythonimg_Y, .pythonimgbox img.pythonimg_T, .pythonimgbox img.pythonimg_H, .pythonimgbox img.pythonimg_O, .pythonimgbox img.pythonimg_N')
-          .toggleClass('active', !(index == 1 && direction == 'down') && !(index >= 2 && nextIndex != 2 && direction == 'up'));
+          .toggleClass('active', !(index == 1 && direction == 'down') && !(index >= 2 && nextIndex == 1 && direction == 'up'));
 
           $('.pythonimgbox img.pythonimg_P, .pythonimgbox img.pythonimg_Y, .pythonimgbox img.pythonimg_T, .pythonimgbox img.pythonimg_H, .pythonimgbox img.pythonimg_O, .pythonimgbox img.pythonimg_N')
           .toggleClass('moveDown', index == 1 && direction == 'down');
 
           $('.pythonimgbox img.pythonimg_P, .pythonimgbox img.pythonimg_Y, .pythonimgbox img.pythonimg_T, .pythonimgbox img.pythonimg_H, .pythonimgbox img.pythonimg_O, .pythonimgbox img.pythonimg_N')
-          .toggleClass('moveUp', index >= 2 && direction == 'up');
+          .toggleClass('moveUp', index >= 2 && nextIndex==1 && direction == 'up');
 
           //JS控制滑动效果
           var baseSectionHeight = 979, baseMarginTop = 1000;
           var basePtranslateP = 930, basePtranslateY = 795, basePtranslateT = 945, basePtranslateH = 422, basePtranslateO = 722, basePtranslateN = 475;
           var offsetHeight = sectionHeight-baseSectionHeight;
           //active
-          if (!(index == 1 && direction == 'down') && !(index >= 2 && nextIndex != 2 && direction == 'up')) {
+          if (!(index == 1 && direction == 'down') && !(index >= 2 && nextIndex == 1 && direction == 'up')) {
             $('.pythonimgbox img.pythonimg_P, .pythonimgbox img.pythonimg_Y, .pythonimgbox img.pythonimg_T, .pythonimgbox img.pythonimg_H, .pythonimgbox img.pythonimg_O, .pythonimgbox img.pythonimg_N').css({
               "margin-top": (baseMarginTop+offsetHeight)+"px"
             });
