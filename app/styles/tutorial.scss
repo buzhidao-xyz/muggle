@@ -50,9 +50,6 @@
 		.pythonimg_P.moveDown {
 			width: 79px;
 			height: 100px;
-			-webkit-transform: translate(-119px, 930px);
-		  	-ms-transform: translate(-119px, 930px);
-		    transform: translate(-119px, 930px);
 		}
 		.pythonimg_P.moveUp {
 			width: 127px;
@@ -67,9 +64,6 @@
 		.pythonimg_Y.moveDown {
 			width: 97px;
 			height: 100px;
-			-webkit-transform: translate(-360px, 795px);
-		  	-ms-transform: translate(-360px, 795px);
-		    transform: translate(-360px, 795px);
 		}
 		.pythonimg_Y.moveUp {
 			width: 159px;
@@ -84,9 +78,6 @@
 		.pythonimg_T.moveDown {
 			width: 78px;
 			height: 100px;
-			-webkit-transform: translate(-630px, 945px);
-		  	-ms-transform: translate(-630px, 945px);
-		    transform: translate(-630px, 945px);
 		}
 		.pythonimg_T.moveUp {
 			width: 127px;
@@ -101,9 +92,6 @@
 		.pythonimg_H.moveDown {
 			width: 84px;
 			height: 100px;
-			-webkit-transform: translate(7px, 422px);
-		  	-ms-transform: translate(7px, 422px);
-		    transform: translate(7px, 422px);
 		}
 		.pythonimg_H.moveUp {
 			width: 136px;
@@ -118,9 +106,6 @@
 		.pythonimg_O.moveDown {
 			width: 100px;
 			height: 100px;
-			-webkit-transform: translate(-635px, 722px);
-		  	-ms-transform: translate(-635px, 722px);
-		    transform: translate(-635px, 722px);
 		}
 		.pythonimg_O.moveUp {
 			width: 161px;
@@ -135,9 +120,6 @@
 		.pythonimg_N.moveDown {
 			width: 82px;
 			height: 100px;
-			-webkit-transform: translate(-265px, 475px);
-		  	-ms-transform: translate(-265px, 475px);
-		    transform: translate(-265px, 475px);
 		}
 		.pythonimg_N.moveUp {
 			width: 136px;
@@ -332,7 +314,7 @@
 			display: none;
 			position: absolute;
 			width: 745px;
-			height: 250px;
+			height: 255px;
 			padding: 30px;
 			padding-right: 10px;
 			background: #e63049;
@@ -349,15 +331,17 @@
 		}
 
 		.classsectionpic, .functionsectionpic, .execsectionpic {
-			position: absolute;
+			// position: relative;
 			margin-top: 118px;
 			margin-left: 700px;
 
 			img.classsectionpic_img {
+				position: absolute;
 				display: block;
 			}
 
 			img.classsectionpic_img_hover {
+				position: absolute;
 				display: none;
 			}
 		}
@@ -539,45 +523,45 @@
 @media (min-width: 1200px) {
 	#CourseContainer {
 		.pythonimgbox {
-			.pythonimg_P.moveDown {
-				-webkit-transform: translate(-119px, 850px);
-			  	-ms-transform: translate(-119px, 850px);
-			    transform: translate(-119px, 850px);
-			}
-			.pythonimg_Y.moveDown {
-				-webkit-transform: translate(-360px, 715px);
-			  	-ms-transform: translate(-360px, 715px);
-			    transform: translate(-360px, 715px);
-			}
-			.pythonimg_T.moveDown {
-				-webkit-transform: translate(-630px, 865px);
-			  	-ms-transform: translate(-630px, 865px);
-			    transform: translate(-630px, 865px);
-			}
-			.pythonimg_H.moveDown {
-				-webkit-transform: translate(7px, 342px);
-			  	-ms-transform: translate(7px, 342px);
-			    transform: translate(7px, 342px);
-			}
-			.pythonimg_O.moveDown {
-				-webkit-transform: translate(-635px, 642px);
-			  	-ms-transform: translate(-635px, 642px);
-			    transform: translate(-635px, 642px);
-			}
-			.pythonimg_N.moveDown {
-				-webkit-transform: translate(-265px, 395px);
-			  	-ms-transform: translate(-265px, 395px);
-			    transform: translate(-265px, 395px);
-			}
+			// .pythonimg_P.moveDown {
+			// 	-webkit-transform: translate(-119px, 850px);
+			//   	-ms-transform: translate(-119px, 850px);
+			//     transform: translate(-119px, 850px);
+			// }
+			// .pythonimg_Y.moveDown {
+			// 	-webkit-transform: translate(-360px, 715px);
+			//   	-ms-transform: translate(-360px, 715px);
+			//     transform: translate(-360px, 715px);
+			// }
+			// .pythonimg_T.moveDown {
+			// 	-webkit-transform: translate(-630px, 865px);
+			//   	-ms-transform: translate(-630px, 865px);
+			//     transform: translate(-630px, 865px);
+			// }
+			// .pythonimg_H.moveDown {
+			// 	-webkit-transform: translate(7px, 342px);
+			//   	-ms-transform: translate(7px, 342px);
+			//     transform: translate(7px, 342px);
+			// }
+			// .pythonimg_O.moveDown {
+			// 	-webkit-transform: translate(-635px, 642px);
+			//   	-ms-transform: translate(-635px, 642px);
+			//     transform: translate(-635px, 642px);
+			// }
+			// .pythonimg_N.moveDown {
+			// 	-webkit-transform: translate(-265px, 395px);
+			//   	-ms-transform: translate(-265px, 395px);
+			//     transform: translate(-265px, 395px);
+			// }
 
-			.pythonimg_P.active,
-			.pythonimg_Y.active,
-			.pythonimg_T.active,
-			.pythonimg_H.active,
-			.pythonimg_O.active,
-			.pythonimg_N.active {
-				margin-top: 920px;
-			}
+			// .pythonimg_P.active,
+			// .pythonimg_Y.active,
+			// .pythonimg_T.active,
+			// .pythonimg_H.active,
+			// .pythonimg_O.active,
+			// .pythonimg_N.active {
+			// 	margin-top: 920px;
+			// }
 		}
 
 		.sectionbox {
@@ -592,45 +576,45 @@
 @media (min-width: 1441px) {
 	#CourseContainer {
 		.pythonimgbox {
-			.pythonimg_P.moveDown {
-				-webkit-transform: translate(-119px, 930px);
-			  	-ms-transform: translate(-119px, 930px);
-			    transform: translate(-119px, 930px);
-			}
-			.pythonimg_Y.moveDown {
-				-webkit-transform: translate(-360px, 795px);
-			  	-ms-transform: translate(-360px, 795px);
-			    transform: translate(-360px, 795px);
-			}
-			.pythonimg_T.moveDown {
-				-webkit-transform: translate(-630px, 945px);
-			  	-ms-transform: translate(-630px, 945px);
-			    transform: translate(-630px, 945px);
-			}
-			.pythonimg_H.moveDown {
-				-webkit-transform: translate(7px, 422px);
-			  	-ms-transform: translate(7px, 422px);
-			    transform: translate(7px, 422px);
-			}
-			.pythonimg_O.moveDown {
-				-webkit-transform: translate(-635px, 722px);
-			  	-ms-transform: translate(-635px, 722px);
-			    transform: translate(-635px, 722px);
-			}
-			.pythonimg_N.moveDown {
-				-webkit-transform: translate(-265px, 475px);
-			  	-ms-transform: translate(-265px, 475px);
-			    transform: translate(-265px, 475px);
-			}
+			// .pythonimg_P.moveDown {
+			// 	-webkit-transform: translate(-119px, 930px);
+			//   	-ms-transform: translate(-119px, 930px);
+			//     transform: translate(-119px, 930px);
+			// }
+			// .pythonimg_Y.moveDown {
+			// 	-webkit-transform: translate(-360px, 795px);
+			//   	-ms-transform: translate(-360px, 795px);
+			//     transform: translate(-360px, 795px);
+			// }
+			// .pythonimg_T.moveDown {
+			// 	-webkit-transform: translate(-630px, 945px);
+			//   	-ms-transform: translate(-630px, 945px);
+			//     transform: translate(-630px, 945px);
+			// }
+			// .pythonimg_H.moveDown {
+			// 	-webkit-transform: translate(7px, 422px);
+			//   	-ms-transform: translate(7px, 422px);
+			//     transform: translate(7px, 422px);
+			// }
+			// .pythonimg_O.moveDown {
+			// 	-webkit-transform: translate(-635px, 722px);
+			//   	-ms-transform: translate(-635px, 722px);
+			//     transform: translate(-635px, 722px);
+			// }
+			// .pythonimg_N.moveDown {
+			// 	-webkit-transform: translate(-265px, 475px);
+			//   	-ms-transform: translate(-265px, 475px);
+			//     transform: translate(-265px, 475px);
+			// }
 
-			.pythonimg_P.active,
-			.pythonimg_Y.active,
-			.pythonimg_T.active,
-			.pythonimg_H.active,
-			.pythonimg_O.active,
-			.pythonimg_N.active {
-				margin-top: 1000px;
-			}
+			// .pythonimg_P.active,
+			// .pythonimg_Y.active,
+			// .pythonimg_T.active,
+			// .pythonimg_H.active,
+			// .pythonimg_O.active,
+			// .pythonimg_N.active {
+			// 	margin-top: 1000px;
+			// }
 		}
 		
 		.sectionbox {
