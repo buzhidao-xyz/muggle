@@ -55,7 +55,7 @@ angular.module('muggleApp')
               width: '1200px'
             });
 
-            if ('videoid' in $scope.$chapterinfo) $(".videoview object").animate({height: "639px"});
+            if ('videoid' in $scope.$chapterinfo) $(".videoview object").animate({height: "706.25px"});
           } else {
             menuObj.show();
             menuObj.animate({
@@ -65,7 +65,7 @@ angular.module('muggleApp')
               width: '900px'
             });
 
-            if ('videoid' in $scope.$chapterinfo) $(".videoview object").animate({height: "470px"});
+            if ('videoid' in $scope.$chapterinfo) $(".videoview object").animate({height: "518.75px"});
           }
         }
 
@@ -175,7 +175,7 @@ angular.module('muggleApp')
           } else if ($scope.$chapterinfo.ty==2) {
             //课程视频初始化
             if (window.innerWidth >= 1200) {
-              $scope.polyvInit($scope.$chapterinfo.videoid, '100%', '470');
+              $scope.polyvInit($scope.$chapterinfo.videoid, '100%', '518.75');
             } else {
               $scope.polyvInit($scope.$chapterinfo.videoid, '100%', '0');
             }
