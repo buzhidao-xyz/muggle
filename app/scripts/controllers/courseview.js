@@ -144,6 +144,14 @@ angular.module('muggleApp')
         }
         $scope.$on('getqnmd.success', function (event, d) {
           $scope.$chapterinfo.markdowncontent = $CourseService.qnmdhtml;
+
+          //code highlight
+          setTimeout(function () {
+            // hljs.configure({useBR: true});
+            $('pre code').each(function(i, block) {
+              hljs.highlightBlock(block);
+            });
+          }, 100);
         });
 
         //获取课程-节信息

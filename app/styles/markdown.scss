@@ -6,7 +6,7 @@
         letter-spacing: 0;
         font-family: 'Microsoft YaHei Light','Hiragino Sans GB',Helvetica,Arial,'Lucida Grande',sans-serif;
         
-        * {
+        ul, ul li, ol, ol li, blockquote {
           color: #333333;
           font-size: 16px;
           line-height: 19.2px;
@@ -64,6 +64,10 @@
         ul li {
           margin-left: 0;
         }
+        ol li p, ul li p {
+          display: inline;
+          margin-left: 0;
+        }
         h1, h2, h3, h4, h5, h6 {
           font-weight: lighter;
           text-transform: capitalize;
@@ -115,17 +119,20 @@
           padding: 15px;
         }
         code {
-          color: #FFFFFF;
-          background: #333333;
-          padding: 20px;
-          font-size: 17px;
-          font-weight: 500;
-          display: inline-block;
-          width: 97%;
-          letter-spacing: 1px;
-          border-radius: 0;
-          word-wrap: break-word;
-          font-family: "Helvetica Neue",Arial,"Hiragino Sans GB","STHeiti","Microsoft YaHei","WenQuanYi Micro Hei",SimSun,Song,sans-serif;
+          display: block;
+          // color: #FFFFFF;
+          // background: #333333;
+          // padding: 20px;
+          font-size: 15px;
+          // font-weight: 500;
+          // display: inline-block;
+          width: auto;
+          margin-left: 30px;
+          // letter-spacing: 1px;
+          // border-radius: 0;
+          // word-wrap: break-word;
+          // font-family: "Helvetica Neue",Arial,"Hiragino Sans GB","STHeiti","Microsoft YaHei","WenQuanYi Micro Hei",SimSun,Song,sans-serif;
+          font: normal 10pt Consolas, Monaco, monospace;
         }
         blockquote {
           border-left: 8px solid #eeeeee;
@@ -145,6 +152,9 @@
         pre {
           color: #586e75;
           background-color: #eee8d5;
+          background-color: transparent;
+          border: 0;
+          overflow-x: hidden;
         }
         a, a:active, a:visited, code.url {
           color: #7EDCEE;
