@@ -416,7 +416,8 @@ module.exports = function (grunt) {
             'styles/fonts/{,*/}*.*',
             'plugins/{,*/}*.min.js',
             'plugins/{,*/}highlight.pack.js',
-            'plugins/{,*/}jquery.fullpage.min.css'
+            'plugins/{,*/}jquery.fullpage.min.css',
+            'plugins/{,*/}md5.min.js'
           ]
         }, {
           expand: true,
