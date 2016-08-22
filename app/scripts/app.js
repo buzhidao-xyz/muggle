@@ -92,6 +92,12 @@ angular
         controllerAs: 'courseview',
         cklogon: true
       })
+      .when('/protocol',{
+        templateUrl: 'views/protocol.html',
+        controller: 'BaseCtrl',
+        controllerAs: 'base',
+        cklogon: false
+      })
       .otherwise({
         redirectTo: '/'
       });

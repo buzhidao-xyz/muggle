@@ -1,4 +1,4 @@
-#CourseContainer {
+.mainbox {
 	width: 100%;
 
 	.pythonimgbox {
@@ -472,6 +472,13 @@
 			font-size: 13px;
 			color: #FFFFFF;
 			margin-top: 40px;
+
+			.protocol {
+				margin-right: 30px; color: #E5E5E5; text-decoration: none;
+			}
+			.protocol:hover {
+				color: #FFFFFF;
+			}
 		}
 
 		.icons {

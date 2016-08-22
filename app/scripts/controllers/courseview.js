@@ -129,11 +129,19 @@ angular.module('muggleApp')
           var w = w ? w : '100%';
           var h = h ? h : '0';
           setTimeout(function () {
+            var ts = Math.round(new Date().getTime());
+            var sign = md5("HO1XgtFnag"+vid+ts);
+            console.log("HO1XgtFnag"+vid+ts);
+            console.log(sign);
+
             var player = polyvObject('#videoview').videoPlayer({
               'width': w,
               'height': h,
               'vid' : vid,
-              'flashParams':{'wmode':'window','setScreen':'100','allowScriptAccess':'always','allowFullScreen':'true'}
+              'flashParams':{'wmode':'window','setScreen':'100','allowScriptAccess':'always','allowFullScreen':'true'},
+              'code': $rootScope.$userinfo.id,
+              'ts': ts,
+              'sign': sign
             });
           }, 10);
         }
