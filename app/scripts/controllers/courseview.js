@@ -131,8 +131,6 @@ angular.module('muggleApp')
           setTimeout(function () {
             var ts = Math.round(new Date().getTime());
             var sign = md5("HO1XgtFnag"+vid+ts);
-            console.log("HO1XgtFnag"+vid+ts);
-            console.log(sign);
 
             var player = polyvObject('#videoview').videoPlayer({
               'width': w,
@@ -143,7 +141,7 @@ angular.module('muggleApp')
               'ts': ts,
               'sign': sign
             });
-          }, 10);
+          }, 50);
         }
 
         //获取七牛markdown-html

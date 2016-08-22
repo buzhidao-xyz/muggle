@@ -397,7 +397,7 @@ module.exports = function (grunt) {
     // Replace Google CDN references
     cdnify: {
       dist: {
-        html: ['<%= yeoman.dist %>/*.html']
+        // html: ['<%= yeoman.dist %>/*.html']
       }
     },
 
@@ -417,7 +417,7 @@ module.exports = function (grunt) {
             'plugins/{,*/}*.min.js',
             'plugins/{,*/}highlight.pack.js',
             'plugins/{,*/}jquery.fullpage.min.css',
-            'plugins/{,*/}md5.min.js'
+            'plugins/JavaScript-MD5-2.3.0/js/md5.min.js'
           ]
         }, {
           expand: true,
