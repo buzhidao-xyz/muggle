@@ -138,6 +138,7 @@ angular.module('muggleApp')
               'vid' : vid,
               'flashParams':{'wmode':'window','setScreen':'100','allowScriptAccess':'always','allowFullScreen':'true'},
               'code': $rootScope.$userinfo.id,
+              // 'code': 'xs|||buzhidao|||'+md5('buzhidao'+'xsmuggle20160123!@#'),
               'ts': ts,
               'sign': sign
             });
